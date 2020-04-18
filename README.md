@@ -1,4 +1,4 @@
-【FURIMA_READ.ME】
+【FURIMA_README.md】
 
 ・usersテーブル
 |Column|Type|Options|
