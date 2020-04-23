@@ -1,3 +1,4 @@
+config.i18.default_locale = :ja
 require_relative 'boot'
 
 require 'rails/all'
