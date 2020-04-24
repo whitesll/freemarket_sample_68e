@@ -1,79 +1,111 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+-# %h2 Sign up
+-# = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+-#   = render "devise/shared/error_messages", resource: resource
+-#   .field
+-#     = f.label :email
+-#     %br/
+-#     = f.email_field :email, autofocus: true, autocomplete: "email"
+-#   .field
+-#     = f.label :password
+-#     - if @minimum_password_length
+-#       %em
+-#         (#{@minimum_password_length} characters minimum)
+-#     %br/
+-#     = f.password_field :password, autocomplete: "new-password"
+-#   .field
+-#     = f.label :password_confirmation
+-#     %br/
+-#     = f.password_field :password_confirmation, autocomplete: "new-password"
+-#   .actions
+-#     = f.submit "Sign up"
+-# = render "devise/shared/links"
 
 .background
   .header
     .header__logo
-      ロゴ
-    .header__progress
-      経過ーーーーーーーーーーーーー
+      = image_tag "logo/logo.png", size: "214x62"
+  .form_top
+    会員情報入力
   .user_info
-    .form--top
-      %h2 Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
-      .form--nickname
+      .form_box
         ニックネーム 必須
-        = f.text_field :nickname,placeholder: "例) フリマ太郎"
-      .form--mail
+        %br/
+        = f.text_field :nickname,placeholder: " 例) フリマ太郎"
+      .form_box
         = f.label :email
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
-      .form--password
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " PC・スマホどちらでも可"
+      .form_box
         = f.label :password
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} 以上の文字)
         %br/
         = f.password_field :password, autocomplete: "new-password"
-      .form--password_re
+      .form_box
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
+        %br/
+      .form_text
         ※ 英字と数字の両方を含めて設定してください
-      .form--caution
-        本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客様のに公開されることはありません。
-      .form--full_width_name
+      .form_text
+        本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+        %br/
+        他のお客様のに公開されることはありません。
+      .form_box
         お名前（全角）必須
-        = f.text_field :full_width_last_name, placeholder: "例)山田"
-        = f.text_field :full_width_first_name, placeholder: "例)太郎"
-      .form--half_width_kana
+        %br/
+        = f.text_field :full_width_last_name, placeholder: " 例)山田"
+        %br/
+        = f.text_field :full_width_first_name, placeholder: " 例)太郎"
+      .form_box
         お名前カナ（全角) 必須
-        = f.text_field :hira_last_name, placeholder: "例)ヤマダ"
-        = f.text_field :hira_first_name, placeholder: "例)タロウ"
-      .form--birthday
+        %br/
+        = f.text_field :hira_last_name, placeholder: " 例)ヤマダ"
+        %br/
+        = f.text_field :hira_first_name, placeholder: " 例)タロウ"
+      .form_box
         生年月日 必須
+        %br/
         = f.select :birthday_year, [["2000", 1], ["1999", 2], ["1998", 3]]
         年
         = f.select :birthday_month, [["2000", 1], ["1999", 2], ["1998", 3]]
         月
         = f.select :birthday_day, [["2000", 1], ["1999", 2], ["1998", 3]]
         日
-        .actions
-      = f.submit "Sign up"
-    = render "devise/shared/links"
+      .form_box
+        お届け先氏名(全角) 必須
+        %br/
+        = f.text_field :address_full_width_last_name, placeholder: " 例)山田"
+        %br/
+        = f.text_field :address_full_width_first_name, placeholder: " 例)太郎"
+      .form_box
+        お届け先氏名ふりがな(全角) 必須
+        %br/
+        = f.text_field :address_hira_last_name, placeholder: " 例)ヤマダ"
+        %br/
+        = f.text_field :address_hira_first_name, placeholder: " 例)タロウ"
+      .form_box
+        お届け先住所
+        %br/
+        = f.text_field :zip_code, placeholder: " 郵便番号"
+        %br/
+        = f.text_field :prefectures, placeholder: " 都道府県"
+        %br/
+        = f.text_field :city, placeholder: " 市区町村"
+        %br/
+        = f.text_field :address, placeholder: " 番地"
+      .form_box
+        = f.submit "sign up"
+        = render "devise/shared/links"
 
   .footer
-    .footer__contents
-      プライバシーポリシー FURIMA利用規約 特定商取引に関する表記
+    %ul.terms
+      %li プライバシーポリシー
+      %li FURIMA利用規約
+      %li 特定商取引に関する表記
     .footer__logo
-      ロゴ！！！
+      = image_tag "logo/logo-white.png", size: "170x50"
