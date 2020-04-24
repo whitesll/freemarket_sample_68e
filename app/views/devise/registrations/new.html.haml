@@ -19,3 +19,61 @@
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
+
+.background
+  .header
+    .header__logo
+      ロゴ
+    .header__progress
+      経過ーーーーーーーーーーーーー
+  .user_info
+    .form--top
+      %h2 Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .form--nickname
+        ニックネーム 必須
+        = f.text_field :nickname,placeholder: "例) フリマ太郎"
+      .form--mail
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .form--password
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} 以上の文字)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      .form--password_re
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+        ※ 英字と数字の両方を含めて設定してください
+      .form--caution
+        本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客様のに公開されることはありません。
+      .form--full_width_name
+        お名前（全角）必須
+        = f.text_field :full_width_last_name, placeholder: "例)山田"
+        = f.text_field :full_width_first_name, placeholder: "例)太郎"
+      .form--half_width_kana
+        お名前カナ（全角) 必須
+        = f.text_field :hira_last_name, placeholder: "例)ヤマダ"
+        = f.text_field :hira_first_name, placeholder: "例)タロウ"
+      .form--birthday
+        生年月日 必須
+        = f.select :birthday_year, [["2000", 1], ["1999", 2], ["1998", 3]]
+        年
+        = f.select :birthday_month, [["2000", 1], ["1999", 2], ["1998", 3]]
+        月
+        = f.select :birthday_day, [["2000", 1], ["1999", 2], ["1998", 3]]
+        日
+        .actions
+      = f.submit "Sign up"
+    = render "devise/shared/links"
+
+  .footer
+    .footer__contents
+      プライバシーポリシー FURIMA利用規約 特定商取引に関する表記
+    .footer__logo
+      ロゴ！！！

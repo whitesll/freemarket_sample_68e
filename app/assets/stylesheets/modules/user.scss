@@ -1,0 +1,55 @@
+.background {
+  background-color: gray;
+  .header {
+    height: 200px;
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+
+    &__logo {
+      height: 100px;
+      width: 200px;
+      background-color: white;
+    }
+    &__progress{
+      height: 50px;
+      width: 300px;
+      background-color: white;
+    }
+  }
+
+  .user_info{
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    margin: 0 auto;
+    form {
+      margin: 10px auto;
+      
+    }
+
+  }
+
+
+  .footer{
+    width: 700px;
+    height: 200px;
+    
+    margin: 0 auto;
+
+    &__contents{
+      background-color: white;
+      height: 50px;
+      width: 200px;
+      margin: 0 auto;
+    }
+    &__logo{
+      background-color: white;
+      height: 50px;
+      width: 50px;
+      margin: 0 auto;
+    }
+  }
+}
