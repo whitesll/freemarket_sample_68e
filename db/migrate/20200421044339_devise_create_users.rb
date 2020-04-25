@@ -12,9 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string  :hira_last_name,         null: false, default: ""
       t.string  :hira_first_name,        null: false, default: ""
 
-      t.integer :birthday_year
-      t.integer :birthday_month
-      t.integer :birthday_day
+      t.date    :birth_date,             null: false
 
       t.string  :address_full_width_last_name,   null: false, default: ""
       t.string  :address_full_width_first_name,  null: false, default: ""

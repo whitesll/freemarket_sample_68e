@@ -20,9 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_21_044339) do
     t.string "full_width_first_name", default: "", null: false
     t.string "hira_last_name", default: "", null: false
     t.string "hira_first_name", default: "", null: false
-    t.integer "birthday_year"
-    t.integer "birthday_month"
-    t.integer "birthday_day"
+    t.date "birth_date", null: false
     t.string "address_full_width_last_name", default: "", null: false
     t.string "address_full_width_first_name", default: "", null: false
     t.string "address_hira_last_name", default: "", null: false
