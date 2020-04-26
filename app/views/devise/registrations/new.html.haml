@@ -99,8 +99,11 @@
 
   .footer
     %ul.terms
-      %li プライバシーポリシー
-      %li FURIMA利用規約
-      %li 特定商取引に関する表記
+      %li
+        = link_to "プライバシーポリシー", "/"
+      %li 
+        = link_to "FURIMA利用規約", "/"
+      %li
+        = link_to "特定商取引に関する表記", "/"
     .footer__logo
       = image_tag "logo/logo-white.png", size: "170x50"
