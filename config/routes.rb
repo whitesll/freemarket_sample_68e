@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root  'posts#index'
+  root to: 'products#index'
+  resources :products, except: :index
 end
