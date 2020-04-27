@@ -48,6 +48,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :development do
@@ -70,6 +73,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -77,7 +81,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'devise'
+gem 'kaminari'
 gem 'mini_magick'
+gem 'ransack'
 
 group :production do
   gem 'unicorn', '5.4.1'
@@ -85,3 +91,12 @@ end
 
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'jquery-rails' 　
+gem "ancestry"
+gem 'payjp'
+gem 'bxslider-rails'
+gem 'active_hash'
+gem 'rails-i18n'
+gem "jp_prefecture"
+gem 'dotenv-rails'
+gem "gretel"
