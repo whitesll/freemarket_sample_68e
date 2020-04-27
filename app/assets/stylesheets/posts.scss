@@ -1,3 +1,64 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    .list {
+      display: flex;
+      &__right{
+
+      }
+      &__left {
+
+      }
+    }
+    .box {
+      display: flex;
+      &__right {
+
+      }
+      &__left {
+
+      }
+    }  
+  }
+}
+ul {
+  list-style: none;
+}
+
+.main { 
+  &__image {
+    width: 100%;
+    height: 560px;
+    background-image: url(sample1.jpg);
+    border:  solid 1px;
+    display:  inline-block;
+    color: white;
+    display: flex;
+    &__box {
+      margin: auto;
+      &__subtitle {
+        font-size: 60px;
+        align-items: 560px;
+      }
+      &__text {
+			  font-size: 20px;
+      }
+      &__btn{
+        display: flex;
+        .btn1 {
+          width: 150px;
+          height: 50px;          
+          }
+        .btn2 {
+          width: 150px;
+          height: 50px; 
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
