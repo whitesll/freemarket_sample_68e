@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
       ## Database authenticatable
-      t.string  :email,                  null: false, default: ""
+      t.string  :email,                  null: false, default: "", unique: true
       t.string  :encrypted_password,     null: false, default: ""
       t.string  :nickname,               null: false, default: ""
       t.string  :full_width_last_name,   null: false, default: ""
@@ -13,17 +13,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string  :hira_first_name,        null: false, default: ""
 
       t.date    :birth_date,             null: false
-
-      t.string  :address_full_width_last_name,   null: false, default: ""
-      t.string  :address_full_width_first_name,  null: false, default: ""
-      t.string  :address_hira_last_name,         null: false, default: ""
-      t.string  :address_hira_first_name,        null: false, default: ""
-
-      t.integer :zip_code,               default: ""
-      t.integer :prefectures,            default: ""
-      t.integer :city,                   default: ""
-      t.integer :address,                default: ""
-
 
       ## Recoverable
       t.string   :reset_password_token

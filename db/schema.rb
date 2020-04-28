@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_044339) do
+ActiveRecord::Schema.define(version: 2020_04_28_125700) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "address_full_width_last_name", default: "", null: false
+    t.string "address_full_width_first_name", default: "", null: false
+    t.string "address_hira_last_name", default: "", null: false
+    t.string "address_hira_first_name", default: "", null: false
+    t.integer "phone_number", null: false
+    t.integer "zip_code"
+    t.string "prefectures", default: ""
+    t.string "city", default: ""
+    t.string "address", default: ""
+    t.string "room_number", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -21,14 +36,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_044339) do
     t.string "hira_last_name", default: "", null: false
     t.string "hira_first_name", default: "", null: false
     t.date "birth_date", null: false
-    t.string "address_full_width_last_name", default: "", null: false
-    t.string "address_full_width_first_name", default: "", null: false
-    t.string "address_hira_last_name", default: "", null: false
-    t.string "address_hira_first_name", default: "", null: false
-    t.integer "zip_code"
-    t.integer "prefectures"
-    t.integer "city"
-    t.integer "address"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
