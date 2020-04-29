@@ -1,3 +1,93 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.contents {
+  margin: 0px;
+  background-color: rgb(235, 235, 235);
+}
+
+.header {
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  line-height: 185px;
+}
+
+.body {
+  background-color: white;
+  max-width: 700px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.product__image {
+  padding: 40px;
+  &__box2 {
+    margin-top: 16px;
+    font-size: 13px;
+  }
+  &__box3 {
+    margin-top: 16px;
+    background-color: rgb(223, 223, 223);
+    font-size: 12px;
+    line-height: 1.4em;
+    text-align: center;
+    height: 150px;
+    width: 100%;
+    &__icon {
+      padding-top: 40px;
+    }
+  }
+}
+
+.product__name {
+  padding: 40px;
+}
+
+.product__explanation {
+  padding: 40px;
+}
+
+.product__detail {
+  padding: 40px;
+}
+
+.product__carry {
+  padding: 40px;
+}
+
+.product__price {
+  padding: 40px;
+}
+
+.product__sell {
+  padding: 40px;
+}
+
+.product__rule {
+  font-size: 12px;
+  padding: 40px;
+}
+
+.footer {
+  padding: 40px 0px 41px;
+  &__top {
+    display: inline-block;
+    margin: -16px 0px 40px -16px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    &__box1 {
+      padding-right: 20px;
+    }
+    &__box3 {
+      padding-left: 20px;
+    }
+  }
+  &__center {
+    display: flex;
+    justify-content: center;
+  }
+  &__bottom {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}

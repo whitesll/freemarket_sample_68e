@@ -1,7 +1,7 @@
 .contents
   .header
-    .header__icon
-      = image_tag "logo/logo.png", size: "214x62"
+    .header__logo
+      = image_tag "logo.png", size: "214x62"
   .body
     .product__image
       .product__image__box1
@@ -13,7 +13,7 @@
         最大10枚までアップロードできます
       .product__image__box3
         .product__image__box3__icon
-          アイコン（カメラ）
+          = image_tag "icon/icon_camera.png", size: "30x30"
         .product__image__box3__drop
           ドラッグアンドドロップ
         .product__image__box3__upload
@@ -126,10 +126,10 @@
       .footer__top__box1
         プライバシーポリシー
       .footer__top__box2
-        メルカリ利用規約
+        FURIMA利用規約
       .footer__top__box3
         特定商取引に関する表記
     .footer__center
-      メルカリ（アイコン）
+      = image_tag "logo-white.png", size: "214x62"
     .footer__bottom
       © Mercari, Inc.
