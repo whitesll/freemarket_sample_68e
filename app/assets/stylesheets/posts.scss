@@ -1,5 +1,8 @@
+body {
+  margin: 0;
+}
+
 .contents {
-  margin: 0px;
   background-color: rgb(235, 235, 235);
 }
 
@@ -7,7 +10,7 @@
   height: 128px;
   display: flex;
   justify-content: center;
-  line-height: 185px;
+  line-height: 170px;
 }
 
 .body {
@@ -19,6 +22,13 @@
 
 .product__image {
   padding: 40px;
+  &__box1 {
+    display: flex;
+    justify-content: flex-start;
+    &__hissu {
+      padding-left: 20px;
+    }
+  }
   &__box2 {
     margin-top: 16px;
     font-size: 13px;
@@ -39,10 +49,24 @@
 
 .product__name {
   padding: 40px;
+  &__box1 {
+    display: flex;
+    justify-content: flex-start;
+    &__hissu {
+      padding-left: 20px;
+    }
+  }
 }
 
 .product__explanation {
   padding: 40px;
+  &__box1 {
+    display: flex;
+    justify-content: flex-start;
+    &__hissu {
+      padding-left: 20px;
+    }
+  }
 }
 
 .product__detail {
