@@ -24,13 +24,22 @@ body {
   padding: 40px;
   &__box1 {
     display: flex;
-    justify-content: flex-start;
+    &__gazou {
+      float: left;
+      font-size: 14px;
+    }
     &__hissu {
-      padding-left: 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      float: right;
+      margin-left: 20px;
+      background-color: red;
+      color: white;
+      height: 21px;
     }
   }
   &__box2 {
-    margin-top: 16px;
+    padding-top: 20px;
     font-size: 13px;
   }
   &__box3 {
@@ -41,8 +50,11 @@ body {
     text-align: center;
     height: 150px;
     width: 100%;
+    position: relative;
     &__icon {
-      padding-top: 40px;
+    position: absolute;
+    top: 40px;
+    left: 195px;
     }
   }
 }
@@ -51,38 +63,359 @@ body {
   padding: 40px;
   &__box1 {
     display: flex;
-    justify-content: flex-start;
-    &__hissu {
-      padding-left: 20px;
+    margin-bottom: 20px;
+    &__name {
+      font-size: 14px;
+      float: left;
     }
+    &__hissu {
+      font-size: 14px;
+      height: 21px;
+      border-radius: 4px;
+      float: right;
+      margin-left: 20px;
+      background-color: red;
+      color: white;
+    }
+  }
+  &__box2 {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    height: 48px;
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    width: inherit;
   }
 }
 
 .product__explanation {
   padding: 40px;
   &__box1 {
+    margin-bottom: 20px;
     display: flex;
-    justify-content: flex-start;
+    &__detail {
+      font-size: 14px;
+      float: left;
+    }
     &__hissu {
-      padding-left: 20px;
+      font-size: 14px;
+      height: 21px;
+      border-radius: 4px;
+      float: right;
+      margin-left: 20px;
+      background-color: red;
+      color: white;
+    }
+  }
+  &__box2 {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 16px;
+    margin: 0;
+    outline: none;
+    padding: 13px 16px;
+    resize: vertical;
+    vertical-align: middle;
+  }
+  &__box3 {
+    &__mojisuu {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.4em;
+    float: right;
     }
   }
 }
 
 .product__detail {
   padding: 40px;
+  &__box1 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  &__box2 {
+    &__ue {
+      margin-bottom: 10px;
+      display: flex;
+      &__category {
+        float: left;
+        font-size: 14px;
+      }
+      &__hissu {
+        font-size: 14px;
+        height: 21px;
+        border-radius: 4px;
+        font-size: 14px;
+        float: right;
+        margin-left: 20px;
+        background-color: red;
+        color: white;
+      }
+    }
+    &__select {
+      font-size: 14px;
+      -webkit-appearance: none;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: #222;
+      font-size: 16px;
+      height: 48px;
+      line-height: 1;
+      margin: 0;
+      outline: none;
+      padding: 0 56px 0 16px;
+      width: 100%;
+    }
+  }
+  &__box3 {
+    margin-top: 20px;
+    &__ue {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: flex-start;
+      &__brand {
+        font-size: 14px;
+      }
+      &__nini {
+        font-size: 14px;
+        height: 21px;
+        border-radius: 4px;
+        margin-left: 20px;
+        background-color: rgb(172, 171, 171);
+        color: white;
+      }
+    }
+    &__select {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      height: 48px;
+      line-height: 1;
+      margin: 0;
+      outline: none;
+      padding: 0 56px 0 16px;
+    }
+  }
+    &__box4 {
+      margin-top: 20px;
+      &__ue {
+        margin-bottom: 10px;
+      display: flex;
+      justify-content: flex-start;
+      &__status {
+        font-size: 14px;
+      }
+      &__hissu {
+        font-size: 14px;
+        height: 21px;
+        border-radius: 4px;
+        margin-left: 20px;
+        background-color: red;
+        color: white;
+      }
+    }
+    &__select {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      height: 48px;
+      line-height: 1;
+      margin: 0;
+      outline: none;
+      padding: 0 56px 0 16px;
+    }
+  }
 }
 
 .product__carry {
   padding: 40px;
+  &__box1 {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  &__box2 {
+    margin-bottom: 20px;
+    &__ue {
+      margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    &__futan {
+      font-size: 14px;
+    }
+    &__hissu {
+      font-size: 14px;
+      height: 21px;
+      border-radius: 4px;
+      margin-left: 20px;
+      background-color: red;
+      color: white;
+    }
+   }
+   &__select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 48px;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 0 56px 0 16px;
+   }
+  }
+  &__box3 {
+    &__ue {
+      margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    &__erea {
+      font-size: 14px;
+    }
+    &__hissu {
+      font-size: 14px;
+      height: 21px;
+      border-radius: 4px;
+      margin-left: 20px;
+      background-color: red;
+      color: white;
+    }
+   }
+   &__select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 48px;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 0 56px 0 16px;
+   }
+  }
+  &__box4 {
+    margin-top: 20px;
+    &__ue {
+      margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    &__day {
+      font-size: 14px;
+    }
+    &__hissu {
+      font-size: 14px;
+      height: 21px;
+      border-radius: 4px;
+      margin-left: 20px;
+      background-color: red;
+      color: white;
+    }
+   }
+   &__select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: 48px;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 0 56px 0 16px;
+   }
+  }
 }
 
 .product__price {
   padding: 40px;
+  &__box1 {
+    font-size: 14px;
+  }
+  &__box2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    &__left {
+      margin-top: 10px;
+      display: flex;
+      justify-content: flex-start;
+      &__hissu {
+        font-size: 14px;
+        height: 21px;
+        border-radius: 4px;
+        margin-left: 20px;
+        background-color: red;
+        color: white;
+      }
+    }
+    &__right {
+      display: flex;
+      justify-content: flex-start;
+      &__en {
+        font-size: 14px;
+        margin-right: 8px;
+        line-height: 48px;
+      }
+      &__0 {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-family: inherit;
+        font-size: inherit;
+        height: 48px;
+        margin: 0;
+        outline: none;
+        padding: 0 16px;
+        width: 100px;
+        line-height: 48px;
+      }
+    }
+  }
+  &__box3 {
+    margin-top: 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__box4 {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .product__sell {
-  padding: 40px;
+    width: 360px;
+    margin: 0px auto 32px;
+    line-height: 48px;
+  &__box1 {
+    height: 48px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+  }
+  &__box2 {
+    margin-top: 24px;
+    height: 48px;
+    background-color: rgb(182, 182, 182);
+    border-radius: 4px;
+    text-align: center;
+  }
+  &__box3 {
+    margin-top: 24px;
+    height: 48px;
+    font-size: 14px;
+    text-align: center;
+  }
 }
 
 .product__rule {
