@@ -79,6 +79,7 @@ body {
     }
   }
   &__box2 {
+    #text {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -88,7 +89,9 @@ body {
     margin: 0;
     outline: none;
     padding: 0 16px;
-    width: inherit;
+    width: 100%;
+    color: rgb(230, 227, 227);
+    }
   }
 }
 
@@ -112,6 +115,7 @@ body {
     }
   }
   &__box2 {
+    #text {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -122,6 +126,10 @@ body {
     padding: 13px 16px;
     resize: vertical;
     vertical-align: middle;
+    width: 100%;
+    height: 300px;
+    color: rgb(230, 227, 227);
+    }
   }
   &__box3 {
     &__mojisuu {
@@ -159,6 +167,7 @@ body {
       }
     }
     &__select {
+      #text {
       font-size: 14px;
       -webkit-appearance: none;
       background-color: #fff;
@@ -173,6 +182,8 @@ body {
       outline: none;
       padding: 0 56px 0 16px;
       width: 100%;
+      color: rgb(230, 227, 227);
+      }
     }
   }
   &__box3 {
@@ -194,6 +205,7 @@ body {
       }
     }
     &__select {
+      #text {
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
@@ -203,6 +215,9 @@ body {
       margin: 0;
       outline: none;
       padding: 0 56px 0 16px;
+      width: 100%;
+      color: rgb(230, 227, 227);
+      }
     }
   }
     &__box4 {
@@ -224,6 +239,7 @@ body {
       }
     }
     &__select {
+      #text {
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
@@ -233,6 +249,9 @@ body {
       margin: 0;
       outline: none;
       padding: 0 56px 0 16px;
+      width: 100%;
+      color: rgb(230, 227, 227);
+      }
     }
   }
 }
@@ -247,8 +266,8 @@ body {
     margin-bottom: 20px;
     &__ue {
       margin-bottom: 10px;
-    display: flex;
-    justify-content: flex-start;
+      display: flex;
+      justify-content: flex-start;
     &__futan {
       font-size: 14px;
     }
@@ -262,6 +281,7 @@ body {
     }
    }
    &__select {
+     #text {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -271,6 +291,9 @@ body {
     margin: 0;
     outline: none;
     padding: 0 56px 0 16px;
+    width: 100%;
+    color: rgb(230, 227, 227);
+     }
    }
   }
   &__box3 {
@@ -291,6 +314,7 @@ body {
     }
    }
    &__select {
+     #text {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -300,6 +324,9 @@ body {
     margin: 0;
     outline: none;
     padding: 0 56px 0 16px;
+    width: 100%;
+    color: rgb(230, 227, 227);
+     }
    }
   }
   &__box4 {
@@ -321,6 +348,7 @@ body {
     }
    }
    &__select {
+     #text {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -330,6 +358,9 @@ body {
     margin: 0;
     outline: none;
     padding: 0 56px 0 16px;
+    width: 100%;
+    color: rgb(230, 227, 227);
+     }
    }
   }
 }
@@ -365,6 +396,7 @@ body {
         line-height: 48px;
       }
       &__0 {
+        #price {
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
@@ -374,8 +406,10 @@ body {
         margin: 0;
         outline: none;
         padding: 0 16px;
-        width: 100px;
+        width: 200px;
         line-height: 48px;
+        color: rgb(230, 227, 227);
+        }
       }
     }
   }
@@ -415,6 +449,9 @@ body {
     height: 48px;
     font-size: 14px;
     text-align: center;
+    a {
+      color: rgb(144, 230, 252);
+    }
   }
 }
 
@@ -433,9 +470,21 @@ body {
     justify-content: center;
     &__box1 {
       padding-right: 20px;
+      text-decoration: none;
+      a {
+        color: black;
+      }
+    }
+    &__box2 {
+      a {
+        color: black;
+      }
     }
     &__box3 {
       padding-left: 20px;
+      a {
+        color: black;
+      }
     }
   }
   &__center {
@@ -447,4 +496,8 @@ body {
     display: flex;
     justify-content: center;
   }
+}
+
+a {
+  text-decoration: none;
 }

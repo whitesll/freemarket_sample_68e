@@ -26,7 +26,8 @@
         .product__name__box1__hissu
           必須
       .product__name__box2
-        40文字まで
+        = form_tag root_path do 
+          = text_field_tag :text, '40字まで'
     .product__explanation
       .product__explanation__box1
         .product__explanation__box1__detail
@@ -34,12 +35,8 @@
         .product__explanation__box1__hissu
           必須
       .product__explanation__box2
-        商品の説明（必須、1000文字以内）
-        %br
-        (色、素材、重さ、定価、注意点など)
-        %br
-        %br
-        例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。
+        = form_tag root_path do 
+          = text_area_tag :text, '商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。'
       .product__explanation__box3
         .product__explanation__box3__mojisuu
           0/1000
@@ -54,7 +51,8 @@
           .product__detail__box2__ue__hissu
             必須
         .product__detail__box2__select
-          選択してください
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
       .product__detail__box3
         .product__detail__box3__ue
           .product__detail__box3__ue__brand
@@ -62,7 +60,8 @@
           .product__detail__box3__ue__nini
             任意
         .product__detail__box3__select
-          例）シャネル
+          = form_tag root_path do 
+            = text_field_tag :text, '例）シャネル'
       .product__detail__box4
         .product__detail__box4__ue
           .product__detail__box4__ue__status
@@ -70,7 +69,8 @@
           .product__detail__box4__ue__hissu
             必須
         .product__detail__box4__select
-          選択してください
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
     %hr
     .product__carry
       .product__carry__box1
@@ -82,7 +82,8 @@
           .product__carry__box2__ue__hissu
             必須
         .product__carry__box2__select
-          選択してください
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
       .product__carry__box3
         .product__carry__box3__ue
           .product__carry__box3__ue__erea
@@ -90,7 +91,8 @@
           .product__carry__box3__ue__hissu
             必須
         .product__carry__box3__select
-          選択してください
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
       .product__carry__box4
         .product__carry__box4__ue
           .product__carry__box4__ue__day
@@ -98,7 +100,8 @@
           .product__carry__box4__ue__hissu
             必須
         .product__carry__box4__select
-          選択してください
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
     %hr
     .product__price
       .product__price__box1
@@ -114,7 +117,8 @@
           .product__price__box2__right__en
             ¥
           .product__price__box2__right__0
-            0
+            = form_tag root_path do 
+              = number_field_tag :price, '0'
       .product__price__box3
         .product__price__box3__tesuuryou
           販売手数料（10%）
@@ -127,21 +131,20 @@
           ー
     .product__sell
       .product__sell__box1
-        出品する
-      .product__sell__box2
-        下書きに保存
+        = form_tag root_path, class:"product__sell__box1" do 
+          = submit_tag '出品する'
       .product__sell__box3
-        もどる
+        = link_to "もどる", root_path
     .product__rule
       禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .footer
     .footer__top
       .footer__top__box1
-        プライバシーポリシー
+        = link_to "プライバシーポリシー", "/"
       .footer__top__box2
-        FURIMA利用規約
+        = link_to "FURIMA利用規約", "/"
       .footer__top__box3
-        特定商取引に関する表記
+        = link_to "特定商取引に関する表記", "/"
     .footer__center
       = image_tag "logo-white.png", size: "180x50"
     .footer__bottom
