@@ -36,7 +36,7 @@
           必須
       .product__explanation__box2
         = form_tag root_path do 
-          = text_area_tag :text, '商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。'
+          = text_area_tag :text, '(商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。'
       .product__explanation__box3
         .product__explanation__box3__mojisuu
           0/1000
@@ -74,7 +74,7 @@
     %hr
     .product__carry
       .product__carry__box1
-        配送について（？アイコン）
+        配送について
       .product__carry__box2
         .product__carry__box2__ue
           .product__carry__box2__ue__futan
@@ -106,7 +106,7 @@
     .product__price
       .product__price__box1
         .product__price__box1__kakaku
-          価格（¥300~9,999,999）(?アイコン)
+          価格（¥300~9,999,999）
       .product__price__box2
         .product__price__box2__left
           .product__price__box2__left__hanbaikakaku
@@ -131,8 +131,7 @@
           ー
     .product__sell
       .product__sell__box1
-        = form_tag root_path, class:"product__sell__box1" do 
-          = submit_tag '出品する'
+        出品する
       .product__sell__box3
         = link_to "もどる", root_path
     .product__rule
