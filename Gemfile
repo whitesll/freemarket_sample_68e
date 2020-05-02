@@ -91,7 +91,7 @@ end
 
 gem 'carrierwave'
 gem 'fog-aws'
-gem 'jquery-rails' 　
+
 gem "ancestry"
 gem 'payjp'
 gem 'bxslider-rails'
@@ -100,3 +100,5 @@ gem 'rails-i18n'
 gem "jp_prefecture"
 gem 'dotenv-rails'
 gem "gretel"
+
+gem "jquery-rails"
