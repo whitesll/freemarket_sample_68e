@@ -9,8 +9,8 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string  :address_hira_last_name,         null: false, default: ""
       t.string  :address_hira_first_name,        null: false, default: ""
 
-      t.integer :phone_number,                   default: ""
-      t.integer :zip_code,                       null: false, default: ""
+      t.integer :phone_number
+      t.integer :zip_code,                       null: false
       t.string  :prefectures,                    null: false, default: ""
       t.string  :city,                           null: false, default: ""
       t.string  :address,                        null: false, default: ""
