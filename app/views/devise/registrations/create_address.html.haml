@@ -1,0 +1,24 @@
+-# <%= link_to "トップへ戻る", root_path%>
+
+.background
+  .header
+    .header__logo
+      = image_tag "logo/logo.png", size: "214x62"
+  .form_top
+    登録が完了しました
+  .user_info
+    = form_for @address do |f|
+      = render "devise/shared/error_messages", resource: @address
+      .form_send
+        = link_to "トップへ戻る", root_path
+
+  .footer
+    %ul.terms
+      %li
+        = link_to "プライバシーポリシー", "/"
+      %li
+        = link_to "FURIMA利用規約", "/"
+      %li
+        = link_to "特定商取引に関する表記", "/"
+    .footer__logo
+      = image_tag "logo/logo-white.png", size: "170x50"

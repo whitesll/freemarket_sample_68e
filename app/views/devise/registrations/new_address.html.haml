@@ -1,0 +1,117 @@
+.background
+  .header
+    .header__logo
+      = image_tag "logo/logo.png", size: "214x62"
+  .form_top
+    住所情報入力
+  .user_info
+    = form_for @address do |f|
+      = render "devise/shared/error_messages", resource: @address
+      -# .form_box
+      -#   ニックネーム
+      -#   %span(class="required")
+      -#     必須
+      -#   %br/
+      -#   = f.text_field :nickname,placeholder: " 例) フリマ太郎", class: "form_box_large"
+      -# .form_box
+      -#   = f.label :email
+      -#   %span(class="required")
+      -#     必須
+      -#   %br/
+      -#   = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " PC・スマホどちらでも可", class: "form_box_large"
+      -# .form_box
+      -#   = f.label :password
+      -#   %span(class="required")
+      -#     必須
+      -#   - if @minimum_password_length
+      -#     %em
+      -#       (#{@minimum_password_length} 以上の文字)
+      -#   %br/
+      -#   = f.password_field :password, autocomplete: "new-password", class: "form_box_large", placeholder: " ７文字以上の文字"
+      -# .form_box
+      -#   = f.label :password_confirmation
+      -#   %span(class="required")
+      -#     必須
+      -#   %br/
+      -#   = f.password_field :password_confirmation, autocomplete: "new-password", class: "form_box_large", placeholder: " ７文字以上の文字"
+      -#   %br/
+      -# .form_text
+      -#   ※ 英字と数字の両方を含めて設定してください
+      -# .form_text
+      -#   本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+      -#   %br/
+      -#   他のお客様のに公開されることはありません。
+      -# .form_box
+      -#   お名前（全角）
+      -#   %span(class="required")
+      -#     必須
+      -#   .form_box_name
+      -#     %br/
+      -#     = f.text_field :full_width_last_name, placeholder: " 例)山田", class: "form_box_name_side"
+      -#     %br/
+      -#     = f.text_field :full_width_first_name, placeholder: " 例)太郎",class: "form_box_name_side"
+      -# .form_box
+      -#   お名前カナ（全角)
+      -#   %span(class="required")
+      -#     必須
+      -#   .form_box_name
+      -#     %br/
+      -#     = f.text_field :hira_last_name, placeholder: " 例)ヤマダ", class: "form_box_name_side"
+      -#     %br/
+      -#     = f.text_field :hira_first_name, placeholder: " 例)タロウ", class: "form_box_name_side"
+      -# .form_box
+      -#   生年月日
+      -#   %span(class="required")
+      -#     必須
+      -#   %br/
+      -#   != sprintf(f.date_select( :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), date_separator:'%s'),'年','月')+'日'
+      .form_box
+        お届け先氏名(全角)
+        %span(class="required")
+          必須
+        .form_box_name
+          %br/
+          = f.text_field :address_full_width_last_name, placeholder: " 例)山田", class: "form_box_name_side"
+          %br/
+          = f.text_field :address_full_width_first_name, placeholder: " 例)太郎", class: "form_box_name_side"
+      .form_box
+        お届け先氏名ふりがな(全角)
+        %span(class="required")
+          必須
+        .form_box_name
+          = f.text_field :address_hira_last_name, placeholder: " 例)ヤマダ", class: "form_box_name_side"
+          %br/
+          = f.text_field :address_hira_first_name, placeholder: " 例)タロウ", class: "form_box_name_side"
+      .form_box
+        電話番号
+        %span(class="required")
+          必須
+        %br/
+        = f.phone_field :phone_number, placeholder: " 例) 09011112222", class: "form_box_large"
+      .form_box
+        お届け先住所
+        %span(class="required")
+          マンション名等以外は必須
+        %br/
+        = f.text_field :zip_code, placeholder: " 郵便番号", class: "form_box_small"
+        %br/
+        = f.text_field :prefectures, placeholder: " 都道府県", class: "form_box_large"
+        %br/
+        = f.text_field :city, placeholder: " 市区町村", class: "form_box_large"
+        %br/
+        = f.text_field :address, placeholder: " 番地",class: "form_box_large"
+        %br/
+        = f.text_field :room_number, placeholder: " マンション名、建物名、部屋番号",class: "form_box_large"
+      .form_send
+        = f.submit "登録", class: "form_send_btn"
+
+  .footer
+    %ul.terms
+      %li
+        = link_to "プライバシーポリシー", "/"
+      %li 
+        = link_to "FURIMA利用規約", "/"
+      %li
+        = link_to "特定商取引に関する表記", "/"
+    .footer__logo
+      = image_tag "logo/logo-white.png", size: "170x50"
