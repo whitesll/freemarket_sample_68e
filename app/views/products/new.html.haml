@@ -1,0 +1,162 @@
+.contents
+  .header
+    .header__logo
+      = image_tag "logo.png", size: "185x49"
+  .body
+    .product__image
+      .product__image__box1
+        .product__image__box1__gazou
+          出品画像
+        .product__image__box1__hissu
+          必須
+      .product__image__box2
+        最大10枚までアップロードできます
+      .product__image__box3
+        .product__image__box3__icon
+          = image_tag "icon/icon_camera.png", size: "30x30"
+          .product__image__box3__drop
+            ドラッグアンドドロップ
+            %br
+            またはクリックしてファイルをダウンロード
+    %hr.line
+    .product__name
+      .product__name__box1
+        .product__name__box1__name
+          商品名
+        .product__name__box1__hissu
+          必須
+      .product__name__box2
+        = form_tag root_path do 
+          = text_field_tag :text, '40字まで'
+    .product__explanation
+      .product__explanation__box1
+        .product__explanation__box1__detail
+          商品の説明
+        .product__explanation__box1__hissu
+          必須
+      .product__explanation__box2
+        = form_tag root_path do 
+          = text_area_tag :text, '(商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。'
+      .product__explanation__box3
+        .product__explanation__box3__mojisuu
+          0/1000
+    %hr
+    .product__detail
+      .product__detail__box1
+        商品の詳細
+      .product__detail__box2
+        .product__detail__box2__ue
+          .product__detail__box2__ue__category
+            カテゴリー
+          .product__detail__box2__ue__hissu
+            必須
+        .product__detail__box2__select
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
+      .product__detail__box3
+        .product__detail__box3__ue
+          .product__detail__box3__ue__brand
+            ブランド
+          .product__detail__box3__ue__nini
+            任意
+        .product__detail__box3__select
+          = form_tag root_path do 
+            = text_field_tag :text, '例）シャネル'
+      .product__detail__box4
+        .product__detail__box4__ue
+          .product__detail__box4__ue__status
+            商品の状態
+          .product__detail__box4__ue__hissu
+            必須
+        .product__detail__box4__select
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
+    %hr
+    .product__carry
+      .product__carry__box1
+        配送について
+      .product__carry__box2
+        .product__carry__box2__ue
+          .product__carry__box2__ue__futan
+            配送料の負担
+          .product__carry__box2__ue__hissu
+            必須
+        .product__carry__box2__select
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
+      .product__carry__box3
+        .product__carry__box3__ue
+          .product__carry__box3__ue__erea
+            配送元の地域
+          .product__carry__box3__ue__hissu
+            必須
+        .product__carry__box3__select
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
+      .product__carry__box4
+        .product__carry__box4__ue
+          .product__carry__box4__ue__day
+            配送までの日数
+          .product__carry__box4__ue__hissu
+            必須
+        .product__carry__box4__select
+          = form_tag root_path do 
+            = text_field_tag :text, '選択してください'
+    %hr
+    .product__price
+      .product__price__box1
+        .product__price__box1__kakaku
+          価格（¥300~9,999,999）
+      .product__price__box2
+        .product__price__box2__left
+          .product__price__box2__left__hanbaikakaku
+            販売価格
+          .product__price__box2__left__hissu
+            必須
+        .product__price__box2__right
+          .product__price__box2__right__en
+            ¥
+          .product__price__box2__right__0
+            = form_tag root_path do 
+              = number_field_tag :price, '0'
+      .product__price__box3
+        .product__price__box3__tesuuryou
+          販売手数料（10%）
+        .product__price__box3__tesuuryou2
+          —
+      .product__price__box4
+        .product__price__box4__rieki
+          販売利益
+        .product__price__box4__rieki2
+          —
+    .product__sell
+      .product__sell__box1
+        出品する
+      .product__sell__box3
+        = link_to "もどる", root_path
+    .product__rule
+      %p
+        = link_to "禁止されている出品", '/', class:"link-blue" 
+        、
+        = link_to "行為", '/', class:"link-blue" 
+        を必ずご確認ください。
+      %p
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        = link_to "偽ブランドの販売", '/', class:"link-blue" 
+        は犯罪であり処罰される可能性があります。
+      %p
+        また、出品をもちまして
+        = link_to "加盟店規約", '/', class:"link-blue" 
+        に同意したことになります。
+  .footer
+    .footer__top
+      .footer__top__box1
+        = link_to "プライバシーポリシー", "/"
+      .footer__top__box2
+        = link_to "FURIMA利用規約", "/"
+      .footer__top__box3
+        = link_to "特定商取引に関する表記", "/"
+    .footer__center
+      = image_tag "logo-white.png", size: "180x50"
+    .footer__bottom
+      © FURIMA, Inc.
