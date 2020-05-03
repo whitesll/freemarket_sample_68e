@@ -86,11 +86,11 @@
       &__information{
         margin: 0 auto;
         table{
-        width: 620px;
-        height: 375px;
-        border-collapse: collapse;
-        border: 1px solid #f8f8f8;
-        padding-left: 40px;
+          width: 620px;
+          height: 375px;
+          border-collapse: collapse;
+          border: 1px solid #f8f8f8;
+          padding-left: 40px;
           th{
             width: 20%;
             background-color: #eee;
@@ -123,8 +123,8 @@
             border: 1px solid #ffb340;
             color: #3CCACE;
             a{
-            text-decoration: none;
-            color: #3CCACE;
+              text-decoration: none;
+              color: #3CCACE;
             }
           }
           &__right{
@@ -148,17 +148,16 @@
       text-align: center;
       &__textarea{
         textarea{
-        width: 100%;
-        min-height: 104px;
-     
+          width: 100%;
+          min-height: 104px;
         }
       }
       &__explanation{
-      padding: 8px;
-      font-size: 14px;
-      background-color: #f8f8f8;
-      margin: 20px 0;
-      text-align: left;
+        padding: 8px;
+        font-size: 14px;
+        background-color: #f8f8f8;
+        margin: 20px 0;
+        text-align: left;
       }
       button{
         line-height: 48px;
@@ -174,9 +173,9 @@
     }
     &__link{
       a{
-      text-decoration: none;
-      color: #3CCACE;
-      font-size: 16px;
+        text-decoration: none;
+        color: #3CCACE;
+        font-size: 16px;
       }
         &__product{
           display: flex;
@@ -185,9 +184,9 @@
       &__more{
         margin-top: 24px;
         a{
-        font-size: 22px;
-        font-weight: bold;
-        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+         font-size: 22px;
+         font-weight: bold;
+         font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
         }
       }
     }
