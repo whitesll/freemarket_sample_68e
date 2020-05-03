@@ -1,0 +1,19 @@
+.header
+  .header__box
+    .header__box__title
+    = link_to "furima", "#"
+    .header__box__search
+      = form_with(local: true, method: :get, class: "search-form") do |form|
+        = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+        = form.submit "検索", class: "search-btn"
+  .header__menu
+    %ul.list
+      %li.list__right
+        カテゴリー
+      %li.list__left
+        ブランド
+    %ul.box
+      %li.box__right
+        = link_to "ログイン", "#"
+      %li.box__left
+        = link_to "新規会員登録", "#"

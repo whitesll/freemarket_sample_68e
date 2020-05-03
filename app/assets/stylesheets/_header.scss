@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  &__box {
+    display: flex;
+    margin: 15px 60px;
+    &__title {
+      font-size: 20px;
+    }
+    &__search {
+  
+    }
+  }
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 60px;
+    font-size: 14px;
+    .list {
+      display: flex;
+      &__right{
+        
+      }
+      &__left {
+        margin-left: 20px;
+      }
+    }
+    .box {
+      display: flex;
+      &__right {
+
+      }
+      &__left {
+        margin-left: 20px;
+      }
+    }  
+  }
+}
+.header__box a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+ul.box li a {
+  text-decoration: none;
+  color: black;
+}
