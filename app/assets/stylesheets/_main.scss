@@ -1,0 +1,247 @@
+.main { 
+  &__image {
+    width: 100%;
+    height: 560px;
+    background-image: url(sample1.png);
+    background-size: 100% 560px;
+    border:  solid 1px;
+    display:  inline-block;
+    color: white;
+    display: flex;
+    &__box {
+      margin: auto;
+      &__subtitle {
+        font-size: 60px;
+        align-items: 560px;
+      }
+      &__text {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+      &__btn{
+        display: flex;
+        margin-top: 20px;
+        .btn1 {
+          width: 150px;
+          height: 50px;          
+          }
+        .btn2 {
+          width: 150px;
+          height: 50px; 
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  &__about{
+    display: block;
+    margin: 60px 15px;
+    &__subtitle {
+      text-align: center;
+      font-size: 26px;
+      margin: auto;
+    }
+    &__lists {
+      margin-top: 30px;
+      .lists {
+        display: flex;
+        justify-content: space-around;
+        .list {
+          width: 30%;
+          &__image {
+            position: relative;
+            .number {
+              display: inline-block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 4%;
+              font-size: 30px;
+              text-align: center;
+              margin: 0 5px 0 0;
+              padding: 10px 20px;
+              background-color: #3CCACE;
+              color: #fff;
+            }
+            
+          }
+          &__text {
+            font-size: 20px;
+            font-weight:  bold;
+              .word {
+                color: #3CCACE;
+              }
+
+          }
+          &__descriotion {
+            
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: 400px;
+    background-image: url(info-image.png);
+    background-size: 100% 400px;
+    color: white;
+    display: flex;
+    align-items:center;
+    &__box {
+      .subtitle {
+        font-size: 27px;
+      }
+      .text {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+      &__btn {
+        display: flex;
+        margin-top: 20px;
+        .btn1 {
+
+        }
+        .btn2 {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  &__feature {
+    margin: 60px 100px;
+    &__subtitle {
+      font-size: 27px;
+      text-align: center;
+    }
+    &__lists{
+      width: 100%;
+      .lists {
+        display: flex;
+        .list {
+          margin-right: 25px;
+          &__image {
+
+          }
+          &__text {
+
+          }
+          &__descriotion {
+            
+          }
+        }
+      }
+    }
+  }
+
+  &__category {
+    background-color: #f8f8f8;
+    padding: 80px 0 26px;
+    &__subtitle {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__box { 
+      text-align: center;
+      .new--post a {
+        font-size: 24px;
+        color: #3CCACE;
+        text-decoration: none;
+      }
+      &__products {
+        
+        .lists {
+          width: 780px;
+          margin: 26px auto;
+          display: flex;
+          justify-content: space-around;
+          .list {
+            .image {
+
+            }
+            .name {
+
+            }
+            .price {
+
+            }
+          }
+        }
+      }  
+    }
+  }
+  
+  &__brand {
+    background-color: #f8f8f8;
+    padding: 80px 0;
+    &__subtitle {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__box {
+      text-align: center;
+      .archiver a {
+        font-size: 24px;
+        color: #3CCACE;
+        text-decoration: none;
+      }
+      &__products {
+        .lists {
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+          .list {
+            .image{
+
+            }
+            .name {
+
+            }
+            .price {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__banner {
+    width: 100%;
+    height: 400px;
+    background-image: url(banner-image.png);
+    background-size: 100% 400px;
+    
+    &__box {
+      padding: 100px 40px;
+      text-align: center;
+      color: white;
+      &__text1 {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      &__text2 {
+        font-size: 35px;
+        margin: auto;
+      }
+      &__btn {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+        .btn1 {
+        }
+        .btn2 {
+          margin-left: 10px;
+
+        }
+      }
+    }
+  }
+}
+
