@@ -35,12 +35,6 @@
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", class: "form_box_large", placeholder: " ７文字以上の文字"
         %br/
-      .form_text
-        ※ 英字と数字の両方を含めて設定してください
-      .form_text
-        本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
-        %br/
-        他のお客様のに公開されることはありません。
       .form_box
         お名前（全角）
         %span(class="required")
@@ -65,35 +59,10 @@
           必須
         %br/
         != sprintf(f.date_select( :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), date_separator:'%s'),'年','月')+'日'
-      -# .form_box
-      -#   お届け先氏名(全角)
-      -#   %span(class="required")
-      -#     必須
-      -#   .form_box_name
-      -#     %br/
-      -#     = f.text_field :address_full_width_last_name, placeholder: " 例)山田", class: "form_box_name_side"
-      -#     %br/
-      -#     = f.text_field :address_full_width_first_name, placeholder: " 例)太郎", class: "form_box_name_side"
-      -# .form_box
-      -#   お届け先氏名ふりがな(全角)
-      -#   %span(class="required")
-      -#     必須
-      -#   .form_box_name
-      -#     = f.text_field :address_hira_last_name, placeholder: " 例)ヤマダ", class: "form_box_name_side"
-      -#     %br/
-      -#     = f.text_field :address_hira_first_name, placeholder: " 例)タロウ", class: "form_box_name_side"
-      -# .form_box
-      -#   お届け先住所
-      -#   %span(class="required")
-      -#     必須
-      -#   %br/
-      -#   = f.text_field :zip_code, placeholder: " 郵便番号", class: "form_box_small"
-      -#   %br/
-      -#   = f.text_field :prefectures, placeholder: " 都道府県", class: "form_box_large"
-      -#   %br/
-      -#   = f.text_field :city, placeholder: " 市区町村", class: "form_box_large"
-      -#   %br/
-      -#   = f.text_field :address, placeholder: " 番地",class: "form_box_large"
+      .form_text
+        本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+        %br/
+        他のお客様のに公開されることはありません。
       .form_send
         = f.submit "次へ", class: "form_send_btn"
 
