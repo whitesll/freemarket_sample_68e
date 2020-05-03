@@ -6,8 +6,9 @@
 }
 
 
-.background {
+.create_background {
   background-color: #EEEEEE;
+  height: 100vh;
   .header {
     height: 140px;
     width: 700px;
@@ -25,13 +26,15 @@
     line-height: 70px;
     font-weight: bold;
     margin: 1px auto;
-
   }
   .user_info{
     width: 700px;
     background-color: white;
     margin: 0 auto;
     padding: 30px 0;
+    .new_address {
+      text-decoration: none;
+    }
     form {
       margin: 0 auto;
       .form_box {
@@ -92,9 +95,6 @@
         &_btn:hover{
           color: #48D1CC;
           background: white;
-        }
-        .top {
-          text-decoration: none;
         }
       }
       .form_text {
