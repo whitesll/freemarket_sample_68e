@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_many :products
   has_many :comments
   has_one :address
+  has_one :creditcard
 
 end
