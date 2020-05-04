@@ -18,9 +18,14 @@
 		  }
 		}
 	}
-	
+
 	&__logo {
 		text-align: center;
+		img {
+		width: 160px;
+		max-width: 100%;
+		
+		}
 		p {
 			font-size: 14px;
 		}
