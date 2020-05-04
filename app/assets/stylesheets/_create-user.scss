@@ -32,75 +32,51 @@
     background-color: white;
     margin: 0 auto;
     padding: 30px 0;
-
-      .form_send{
-        @include standard_box();
-        text-align: center;
-        &_btn {
-          border-radius: 5%;
-          padding: 15px 49px;
-          cursor: pointer;
-          background-color: #48D1CC;
-          color: white;
-          transition: 0.5s;
-          border: 2px solid #48D1CC;
-        }
-        &_btn:hover{
-          color: #48D1CC;
-          background: white;
-        }
+    .form_send{
+      @include standard_box();
+      text-align: center;
+      &_btn {
+        border-radius: 5%;
+        padding: 15px 49px;
+        cursor: pointer;
+        background-color: #48D1CC;
+        color: white;
+        transition: 0.5s;
+        border: 2px solid #48D1CC;
       }
-      // .form_text {
-      //   @include standard_box();
-      //   font-size: 14px;
-      // }
-      // .sign_up_link {
-      //   @include standard_box();
-      //   text-align: center;
-      //   border-top: 1px solid #EEEEEE;
-      //   padding-top: 30px;
-      //   &_btn {
-      //     border-radius: 5%;
-      //     padding: 15px 49px;
-      //     cursor: pointer;
-      //     background-color: #48D1CC;
-      //     color: white;
-      //     transition: 0.5s;
-      //     border: 2px solid #48D1CC;
-      //   }
-      //   &_btn:hover{
-      //     color: #48D1CC;
-      //     background: white;
-      //   }
-      // }
+      &_btn:hover{
+        color: #48D1CC;
+        background: white;
+      }
     }
   }
+}
 
-  .footer{
+.footer{
+  width: 700px;
+  height: 200px;
+  margin: 0 auto;
+
+  .terms{
     width: 700px;
-    height: 200px;
-    margin: 0 auto;
-
-    .terms{
-      width: 700px;
-      height: 60px;
-      display: flex;
-      justify-content: space-around;
-      margin-top: 30px;
-      li {
-        font-size: 12px;
-        a {
-          color: black;
-          text-decoration: none;
-        }
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    li {
+      font-size: 12px;
+      a {
+        color: black;
+        text-decoration: none;
       }
     }
-    &__logo{
-      text-align: center;
-    }
-    &__copyright {
-      text-align: center;
-      color: white;
-      font-size: 15px;
-    }
   }
+  &__logo{
+    text-align: center;
+  }
+  &__copyright {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+  }
+}

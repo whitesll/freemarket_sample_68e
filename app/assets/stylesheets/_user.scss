@@ -34,8 +34,14 @@
     padding: 30px 0;
     form {
       margin: 0 auto;
+      #error_explanation {
+        background-color: pink;
+      }
       .form_box {
         @include standard_box();
+        .field_with_errors {
+          display: contents;
+        }
         &_name {
           @include standard_box();
           display: flex;
