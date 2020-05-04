@@ -48,12 +48,13 @@ body {
   width: 100%;
   position: relative;
   &__icon {
-  position: absolute;
-  top: 40px;
-  left: 195px;
+    position: absolute;
+    top: 40px;
+    left: 195px;
   }
   }
   }
+
   .product__name {
   padding: 40px;
   &__box1 {
@@ -74,7 +75,7 @@ body {
   }
   }
   &__box2 {
-  #text {
+  #product_name {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -85,7 +86,6 @@ body {
   outline: none;
   padding: 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
   }
   }
   }
@@ -109,7 +109,7 @@ body {
   }
   }
   &__box2 {
-  #text {
+  #product_text {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -121,8 +121,7 @@ body {
   resize: vertical;
   vertical-align: middle;
   width: 100%;
-  height: 300px;
-  color: rgb(230, 227, 227);
+  height: 200px;
   }
   }
   &__box3 {
@@ -493,4 +492,3 @@ body {
   a {
   text-decoration: none;
   }
-  

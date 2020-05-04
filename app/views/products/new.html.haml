@@ -15,9 +15,13 @@
         .product__image__box3__icon
           = image_tag "icon/icon_camera.png", size: "30x30"
           .product__image__box3__drop
-            ドラッグアンドドロップ
-            %br
-            またはクリックしてファイルをダウンロード
+            = form_for @product do |f|
+              .input-box
+                = f.file_field :image, class: 'input-text'
+                %p
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックしてファイルをダウンロード
     %hr.line
     .product__name
       .product__name__box1
@@ -26,8 +30,8 @@
         .product__name__box1__hissu
           必須
       .product__name__box2
-        = form_tag root_path do 
-          = text_field_tag :text, '40字まで'
+        = form_for @product do |f|
+          = f.text_field :name, placeholder: '40字まで'
     .product__explanation
       .product__explanation__box1
         .product__explanation__box1__detail
@@ -35,8 +39,8 @@
         .product__explanation__box1__hissu
           必須
       .product__explanation__box2
-        = form_tag root_path do 
-          = text_area_tag :text, '(商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。'
+        = form_for @product do |f|
+          = f.text_area :text, placeholder: '商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。', rows: "5"
       .product__explanation__box3
         .product__explanation__box3__mojisuu
           0/1000
