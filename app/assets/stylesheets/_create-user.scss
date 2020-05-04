@@ -32,53 +32,6 @@
     background-color: white;
     margin: 0 auto;
     padding: 30px 0;
-    .new_address {
-      text-decoration: none;
-    }
-    form {
-      margin: 0 auto;
-      .form_box {
-        @include standard_box();
-        &_name {
-          @include standard_box();
-          display: flex;
-          justify-content: space-between;
-          &_side {
-            display: inline-block;
-            width: 50%;
-            padding: 10px 0;
-          }
-        }
-        #user_birth_date_1i {
-          margin-left: 3px;
-        }
-        #user_birth_date_2i {
-          margin-left: 3px;
-        }
-        #user_birth_date_3i {
-          margin-left: 3px;
-        }
-        select {
-          height: 30px;
-          width: 100px;
-        } 
-        &_large {
-          width: 100%;
-          padding: 10px 0;
-        }
-        &_small {
-          width: 50%;
-          padding: 10px 0;
-        }
-        .required {
-          background-color: red;
-          border: 2px solid red;
-          border-radius: 3px;
-          color: white;
-          font-size: 15px;
-          
-        }
-      }
 
       .form_send{
         @include standard_box();
@@ -97,29 +50,29 @@
           background: white;
         }
       }
-      .form_text {
-        @include standard_box();
-        font-size: 14px;
-      }
-      .sign_up_link {
-        @include standard_box();
-        text-align: center;
-        border-top: 1px solid #EEEEEE;
-        padding-top: 30px;
-        &_btn {
-          border-radius: 5%;
-          padding: 15px 49px;
-          cursor: pointer;
-          background-color: #48D1CC;
-          color: white;
-          transition: 0.5s;
-          border: 2px solid #48D1CC;
-        }
-        &_btn:hover{
-          color: #48D1CC;
-          background: white;
-        }
-      }
+      // .form_text {
+      //   @include standard_box();
+      //   font-size: 14px;
+      // }
+      // .sign_up_link {
+      //   @include standard_box();
+      //   text-align: center;
+      //   border-top: 1px solid #EEEEEE;
+      //   padding-top: 30px;
+      //   &_btn {
+      //     border-radius: 5%;
+      //     padding: 15px 49px;
+      //     cursor: pointer;
+      //     background-color: #48D1CC;
+      //     color: white;
+      //     transition: 0.5s;
+      //     border: 2px solid #48D1CC;
+      //   }
+      //   &_btn:hover{
+      //     color: #48D1CC;
+      //     background: white;
+      //   }
+      // }
     }
   }
 
@@ -145,5 +98,9 @@
     &__logo{
       text-align: center;
     }
+    &__copyright {
+      text-align: center;
+      color: white;
+      font-size: 15px;
+    }
   }
-}

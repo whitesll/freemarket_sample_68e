@@ -6,9 +6,9 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .form_box
-        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス", class: "form_box_large"
+        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: " メールアドレス", class: "form_box_large"
       .form_box
-        = f.password_field :password, autocomplete: "current-password",placeholder: "パスワード", class: "form_box_large"
+        = f.password_field :password, autocomplete: "current-password",placeholder: " パスワード", class: "form_box_large"
       - if devise_mapping.rememberable?
         .form_box
           = f.check_box :remember_me
@@ -18,9 +18,8 @@
         = f.submit "ログイン", class: "form_send_btn"
       .sign_up_link
         アカウントをお持ちでない方はこちら
-        %br/
-        = f.submit "メールアドレスで新規登録", class: "sign_up_link_btn"
-
+      .sign_up_link_btn
+        = link_to 'メールアドレスで新規登録', new_user_registration_path, class: "sign_up_link_btn_deco"
 
   .footer
     %ul.terms
@@ -32,3 +31,5 @@
         = link_to "特定商取引に関する表記", "/"
     .footer__logo
       = image_tag "logo/logo-white.png", size: "170x50"
+    .footer__copyright
+      © FURIMA
