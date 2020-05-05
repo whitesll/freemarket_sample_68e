@@ -9,41 +9,40 @@
         フリマアプリです
       .main__image__box__btn
         .btn1
-          = link_to image_tag(src= 'app-store.png', size: '150x50'), "#" 
+          = link_to image_tag(src= 'app-store.png'), "#" 
         .btn2
-          = link_to image_tag(src= 'Google.png', size: '150x50'), "#"
+          = link_to image_tag(src= 'Google.png'), "#"
   .main__about
     .main__about__subtitle
       FURIMAが選ばれる3つの理由
-    .main__about__lists
-      .lists
-        .list
-          .list__image
-            %span.number 1
-            = image_tag "pict-reason-01.jpg", size: "250x300", alt: "顔写真1"
-          .list__text
-            %span.word 3分 
-            ですぐに出品
-          .list__descriotion
-            スマホで入力するだけで簡単に出品できる！
-        .list
-          .list__image
-            %span.number 2
-            = image_tag "pict-reason-02.jpg", size: "250x300", alt: "顔写真2"
-          .list__text
-            %span.word シンプル 
-            で使いやすい
-          .list__descriotion
-            めんどくさい入力は必要なく、検索も購入もスムーズ！
-        .list
-          .list__image
-            %span.number 3
-            = image_tag "pict-reason-03.jpg", size: "250x300", alt: "顔写真3"
-          .list__text
-            手数料 
-            %span.word 業界最安
-          .list__descriotion
-            最大3%でお得に出品&購入！
+    %ul.lists
+      %li.list
+        .image
+          %span.number 1
+          = image_tag "pict-reason-01.jpg", alt: "顔写真1"
+        .text
+          %span.word 3分 
+          ですぐに出品
+        .descriotion
+          スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .image
+          %span.number 2
+          = image_tag "pict-reason-02.jpg", alt: "顔写真2"
+        .text
+          %span.word シンプル 
+          で使いやすい
+        .descriotion
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list
+        .image
+          %span.number 3
+          = image_tag "pict-reason-03.jpg", alt: "顔写真3"
+        .text
+          手数料 
+          %span.word 業界最安
+        .descriotion
+          最大3%でお得に出品&購入！
   .main__info
     .main__info__box
       .subtitle
@@ -56,35 +55,34 @@
         ほしかったあの商品に出会えるかもしれません。
       .main__info__box__btn
         .btn1
-          = link_to image_tag(src= 'app-store.png', size: '150x50'), "#" 
+          = link_to image_tag(src= 'app-store.png'), "#" 
         .btn2
-          = link_to image_tag(src= 'Google.png', size: '150x50'), "#"
+          = link_to image_tag(src= 'Google.png'), "#"
   .main__feature
-    .main__feature__subtitle  
+    .main__feature__subtitle 
       FURIMAの特徴
-    .main__feature__lists
-      %ul.lists
-        %li.list
-          .list__image
-            = image_tag "icon-01.png", size: "250x300", alt: "顔写真1"
-          .list__text
-            簡単に売り買いできる
-          .list__descriotion
-            スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
-        %li.list
-          .list__image
-            = image_tag "icon-03.png", size: "250x300", alt: "顔写真2"
-          .list__text
-            売上金は即日振込みに対応
-          .list__descriotion
-            午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
-        %li.list
-          .list__image
-            = image_tag "icon-04.png", size: "250x300", alt: "顔写真3"
-          .list__text
-            様々な支払いに対応
-          .list__descriotion
-            最大3%でお得に出品&購入！
+    %ul.lists
+      %li.list
+        .list__image
+          = image_tag "icon-01.png", alt: "顔写真1"
+        .list__text
+          簡単に売り買いできる
+        .list__descriotion
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %li.list
+        .list__image
+          = image_tag "icon-03.png", alt: "顔写真2"
+        .list__text
+          売上金は即日振込みに対応
+        .list__descriotion
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      %li.list
+        .list__image
+          = image_tag "icon-04.png", alt: "顔写真3"
+        .list__text
+          様々な支払いに対応
+        .list__descriotion
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります
   .main__category
     .main__category__subtitle
       ピックアップカテゴリー
@@ -94,26 +92,50 @@
       .main__category__box__products
         %ul.lists
           %li.list
-            .image
-              = link_to image_tag(src= 'a007.png', alt: "顔写真4"), "#"
-            .name
-              products3
-            .price
-              30000円
+            = link_to "#" do
+              .image
+                = image_tag 'a007.png', alt: "顔写真4"
+              .menu  
+                .name
+                  products3
+                .detail
+                  .price
+                    30000円
+                    .icon
+                      %i.fa.fa-star
+                      0
+                %p
+                  (税込)
           %li.list
-            .image
-              = link_to image_tag(src= "a003.png", alt: "顔写真5"), "#"
-            .name
-              products2
-            .price
-              20000円
+            = link_to "#" do
+              .image
+                = image_tag 'a003.png', alt: "顔写真5"
+              .menu  
+                .name
+                  products3
+                .detail
+                  .price
+                    20000円
+                    .icon
+                      %i.fa.fa-star
+                      0
+                %p
+                  (税込)
           %li.list
-            .image
-              = link_to image_tag(src= "a001.png", alt: "顔写真6"), "#"
-            .name
-              products1
-            .price
-              10000円
+            = link_to "#" do
+              .image
+                = image_tag 'a001.png', alt: "顔写真6"
+              .menu  
+                .name
+                  products3
+                .detail
+                  .price
+                    10000円
+                    .icon
+                      %i.fa.fa-star
+                      0
+                %p
+                  (税込)
   .main__brand
     .main__brand__subtitle
       ピックアップブランド
@@ -123,26 +145,50 @@
       .main__brand__box__products
         %ul.lists
           %li.list
-            .image
-              = link_to image_tag(src= 'a007.png', alt: "顔写真4"), "#"
-            .name
-              products3
-            .price
-              30000円
+            = link_to "#" do
+              .image
+                = image_tag 'a007.png', alt: "顔写真4"
+              .menu  
+                .name
+                  products3
+                .detail
+                  .price
+                    30000円
+                    .icon
+                      %i.fa.fa-star
+                      0
+                %p
+                  (税込)
           %li.list
-            .image
-              = link_to image_tag(src= "a003.png", alt: "顔写真5"), "#"
-            .name
-              products2
-            .price
-              20000円
+            = link_to "#" do
+              .image
+                = image_tag 'a003.png', alt: "顔写真5"
+              .menu  
+                .name
+                  products3
+                .detail
+                  .price
+                    20000円
+                    .icon
+                      %i.fa.fa-star
+                      0
+                %p
+                  (税込)
           %li.list
-            .image
-              = link_to image_tag(src= "a001.png", alt: "顔写真6"), "#"
-            .name
-              products1
-            .price
-              10000円
+            = link_to "#" do
+              .image
+                = image_tag 'a001.png', alt: "顔写真6"
+              .menu  
+                .name
+                  products3
+                .detail
+                  .price
+                    10000円
+                    .icon
+                      %i.fa.fa-star
+                      0
+                %p
+                  (税込)
   .main__banner
     .main__banner__box
       .main__banner__box__text1
@@ -150,7 +196,7 @@
       .main__banner__box__text2
         今すぐ無料ダウンロード！
       .main__banner__box__btn
-        .btn1
-          = link_to image_tag(src= 'app-store.png', size: '150x50'), "#" 
-        .btn2
-          = link_to image_tag(src= 'Google.png', size: '150x50'), "#"
+        = link_to "#" do
+          = image_tag 'app-store.png', class: "btn1" 
+        = link_to "#" do
+          = image_tag 'Google.png', class: "btn2"
