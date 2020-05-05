@@ -25,7 +25,7 @@
           必須
         - if @minimum_password_length
           %em
-            (#{@minimum_password_length} 以上の文字)
+            (#{@minimum_password_length}文字以上の文字)
         %br/
         = f.password_field :password, autocomplete: "new-password", class: "form_box_large", placeholder: " ７文字以上の文字"
       .form_box
