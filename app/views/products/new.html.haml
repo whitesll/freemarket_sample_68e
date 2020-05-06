@@ -55,8 +55,8 @@
           .product__detail__box2__ue__hissu
             必須
         .product__detail__box2__select
-          = form_tag root_path do 
-            = text_field_tag :text, '選択してください'
+          = form_for @product do |f|
+            = f.collection_select :category_id, Category.all, :id, :name
       .product__detail__box3
         .product__detail__box3__ue
           .product__detail__box3__ue__brand
@@ -64,8 +64,8 @@
           .product__detail__box3__ue__nini
             任意
         .product__detail__box3__select
-          = form_tag root_path do 
-            = text_field_tag :text, '例）シャネル'
+          = form_for @product do |f|
+            = f.text_field :name, placeholder: '例) シャネル'
       .product__detail__box4
         .product__detail__box4__ue
           .product__detail__box4__ue__status
@@ -73,8 +73,8 @@
           .product__detail__box4__ue__hissu
             必須
         .product__detail__box4__select
-          = form_tag root_path do 
-            = text_field_tag :text, '選択してください'
+          = form_for @product do |f|
+            = f.select :status, ["選択してください","新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]
     %hr
     .product__carry
       .product__carry__box1

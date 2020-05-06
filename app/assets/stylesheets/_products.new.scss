@@ -126,7 +126,6 @@ body {
   }
   &__box3 {
   &__mojisuu {
-  color: #888;
   font-size: 12px;
   line-height: 1.4em;
   float: right;
@@ -159,9 +158,8 @@ body {
   }
   }
   &__select {
-  #text {
+  #product_category_id {
   font-size: 14px;
-  -webkit-appearance: none;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -174,7 +172,6 @@ body {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
   }
   }
   }
@@ -197,7 +194,7 @@ body {
   }
   }
   &__select {
-  #text {
+  #product_name {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -208,7 +205,6 @@ body {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
   }
   }
   }
@@ -231,7 +227,7 @@ body {
   }
   }
   &__select {
-  #text {
+  #product_status {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -242,7 +238,7 @@ body {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
+  background-color: #fff;
   }
   }
   }
