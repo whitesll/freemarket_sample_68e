@@ -39,21 +39,22 @@ body {
   font-size: 13px;
   }
   &__box3 {
-  margin-top: 16px;
-  background-color: rgb(223, 223, 223);
-  font-size: 12px;
-  line-height: 1.4em;
-  text-align: center;
-  height: 150px;
-  width: 100%;
-  position: relative;
-  &__icon {
-    position: absolute;
-    top: 40px;
-    left: 195px;
-  }
-  }
-  }
+    margin-top: 16px;
+    background-color: rgb(223, 223, 223);
+    font-size: 12px;
+    line-height: 1.4em;
+    text-align: center;
+    height: 150px;
+    width: 100%;
+    position: relative;
+    &__icon {
+      position: absolute;
+      top: 40px;
+      left: 195px;
+    }
+    }
+    }
+  
 
   .product__name {
   padding: 40px;
@@ -268,7 +269,7 @@ body {
   }
   }
   &__select {
-  #text {
+  #product_shippingcharges {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -279,7 +280,7 @@ body {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
+  background-color: #fff;
   }
   }
   }
@@ -301,7 +302,7 @@ body {
   }
   }
   &__select {
-  #text {
+  #product_shipping_area {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -312,7 +313,7 @@ body {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
+  background-color: #fff;
   }
   }
   }
@@ -335,7 +336,7 @@ body {
   }
   }
   &__select {
-  #text {
+  #product_days_to_ship {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -346,7 +347,7 @@ body {
   outline: none;
   padding: 0 56px 0 16px;
   width: 100%;
-  color: rgb(230, 227, 227);
+  background-color: #fff;
   }
   }
   }
@@ -382,7 +383,7 @@ body {
   line-height: 48px;
   }
   &__0 {
-  #price {
+  #product_price {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
@@ -394,7 +395,6 @@ body {
   padding: 0 16px;
   width: 200px;
   line-height: 48px;
-  color: rgb(230, 227, 227);
   }
   }
   }
