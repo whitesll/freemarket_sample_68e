@@ -100,7 +100,10 @@
             padding: 10px 20px;
             background-color: #3CCACE;
             color: #fff;
-          }            
+          }img {
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
         .text {
           font-size: 20px;
@@ -202,6 +205,10 @@
           width: 70%;
           margin: 0 auto;
           line-height: 120px;
+          img {
+            width: 100%;
+            vertical-align: bottom;
+          }
         }
         &__text {
           margin: 38px 0 10px;
@@ -448,7 +455,4 @@
     }
   }
 }
-img {
-  width: 100%;
-  vertical-align: bottom;
-}
+

@@ -1,6 +1,6 @@
 .background
-  .header
-    .header__logo
+  .header2
+    .header2__logo
       = image_tag "logo/logo.png", size: "214x62"
   .user_info
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -21,7 +21,7 @@
       .sign_up_link_btn
         = link_to 'メールアドレスで新規登録', new_user_registration_path, class: "sign_up_link_btn_deco"
 
-  .footer
+  .footer2
     %ul.terms
       %li
         = link_to "プライバシーポリシー", "/"
@@ -29,7 +29,7 @@
         = link_to "FURIMA利用規約", "/"
       %li
         = link_to "特定商取引に関する表記", "/"
-    .footer__logo
+    .footer2__logo
       = image_tag "logo/logo-white.png", size: "170x50"
-    .footer__copyright
+    .footer2__copyright
       © FURIMA
