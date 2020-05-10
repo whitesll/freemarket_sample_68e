@@ -1,7 +1,7 @@
 .main { 
   &__image {
     height: 560px;
-    background-image: url(bg-mainVisual-pict_pc.jpg);
+    background-image: image-url("bg-mainVisual-pict_pc.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
@@ -124,7 +124,7 @@
   }
 
   &__info {
-    background-image: url(bg-topMiddleDl-pict.jpg);
+    background-image: image-url("bg-topMiddleDl-pict.jpg");
     background-position: bottom right;
     height: 400px;
     background-size: cover;
@@ -416,7 +416,7 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    background-image: url(bg-appBanner-pict.jpg);
+    background-image: image-url("bg-appBanner-pict.jpg");
     &__box {
       color: #fff;
       text-align: center;
