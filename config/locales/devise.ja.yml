@@ -28,8 +28,8 @@ ja:
         nickname: ニックネーム
         full_width_last_name: 苗字(全角)
         full_width_first_name: 名前(全角)
-        hira_last_name: 苗字カナ(全角)
-        hira_first_name: 名前カナ(全角)
+        hira_last_name: 苗字ふりがな(全角)
+        hira_first_name: 名前ふりがな(全角)
         birth_date: 生年月日
       address:
         address_full_width_last_name: お届け先苗字(全角)

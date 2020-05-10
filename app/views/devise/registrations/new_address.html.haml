@@ -8,7 +8,7 @@
     = form_for @address do |f|
       = render "devise/shared/error_messages", resource: @address
       .form_box
-        お届け先氏名(全角)
+        お届け先氏名
         %span(class="required")
           必須
         .form_box_name
@@ -17,13 +17,13 @@
           %br/
           = f.text_field :address_full_width_first_name, placeholder: " 例)太郎", class: "form_box_name_side"
       .form_box
-        お届け先氏名ふりがな(全角)
+        お届け先氏名ふりがな
         %span(class="required")
           必須
         .form_box_name
-          = f.text_field :address_hira_last_name, placeholder: " 例)ヤマダ", class: "form_box_name_side"
+          = f.text_field :address_hira_last_name, placeholder: " 例)やまだ", class: "form_box_name_side"
           %br/
-          = f.text_field :address_hira_first_name, placeholder: " 例)タロウ", class: "form_box_name_side"
+          = f.text_field :address_hira_first_name, placeholder: " 例)たろう", class: "form_box_name_side"
       .form_box
         電話番号
         %span(class="required")
