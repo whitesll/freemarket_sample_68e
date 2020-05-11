@@ -422,11 +422,14 @@ body {
   margin: 0px auto 32px;
   line-height: 48px;
   &__box1 {
-  height: 48px;
-  background-color: red;
-  color: white;
-  border-radius: 4px;
-  text-align: center;
+  .sell {
+    width: 360px;
+    height: 48px;
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+  }
   }
   &__box2 {
   margin-top: 24px;
