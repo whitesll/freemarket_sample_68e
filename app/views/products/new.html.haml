@@ -3,17 +3,17 @@
     .header__logo
       = link_to image_tag "logo.png", size: "185x49"
   .body
-    .product__image
-      .product__image__box1
-        .product__image__box1__gazou
-          出品画像
-        .product__image__box1__hissu
-          必須
-      .product__image__box2
-        最大10枚までアップロードできます
-      .product__image__box3
-        .product__image__box3__upload
-          = form_for @product do |f|
+    = form_for @product do |f|
+      .product__image
+        .product__image__box1
+          .product__image__box1__gazou
+            出品画像
+          .product__image__box1__hissu
+            必須
+        .product__image__box2
+          最大10枚までアップロードできます
+        .product__image__box3
+          .product__image__box3__upload
             = f.fields_for :image do |image|
               .product__image__box3__drop
                 = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
@@ -21,10 +21,10 @@
                     = image.file_field :image, id: "upload-image__btn", class: "upload-image"
                     .product__image__box3__icon
                       = image_tag "icon/icon_camera.png", size: "30x30"
-                      %p
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをダウンロード
+                    %p
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをダウンロード
     %hr.line
     .product__name
       .product__name__box1
@@ -33,8 +33,7 @@
         .product__name__box1__hissu
           必須
       .product__name__box2
-        = form_for @product do |f|
-          = f.text_field :name, placeholder: '40字まで'
+        = f.text_field :name, placeholder: '40字まで'
     .product__explanation
       .product__explanation__box1
         .product__explanation__box1__detail
@@ -42,8 +41,7 @@
         .product__explanation__box1__hissu
           必須
       .product__explanation__box2
-        = form_for @product do |f|
-          = f.text_area :text, placeholder: '商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。', rows: "5"
+        = f.text_area :text, placeholder: '商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。', rows: "5"
       .product__explanation__box3
         .product__explanation__box3__mojisuu
           0/1000
@@ -58,8 +56,7 @@
           .product__detail__box2__ue__hissu
             必須
         .product__detail__box2__select
-          = form_for @product do |f|
-            = f.collection_select :category_id, Category.all, :id, :name
+          = f.collection_select :category_id, Category.all, :id, :name
       .product__detail__box3
         .product__detail__box3__ue
           .product__detail__box3__ue__brand
@@ -67,8 +64,7 @@
           .product__detail__box3__ue__nini
             任意
         .product__detail__box3__select
-          = form_for @product do |f|
-            = f.text_field :name, placeholder: '例) シャネル'
+          = f.text_field :name, placeholder: '例) シャネル'
       .product__detail__box4
         .product__detail__box4__ue
           .product__detail__box4__ue__status
@@ -76,8 +72,7 @@
           .product__detail__box4__ue__hissu
             必須
         .product__detail__box4__select
-          = form_for @product do |f|
-            = f.select :status, ["選択してください","新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]
+          = f.select :status, ["選択してください","新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]
     %hr
     .product__carry
       .product__carry__box1
@@ -89,8 +84,7 @@
           .product__carry__box2__ue__hissu
             必須
         .product__carry__box2__select
-          = form_for @product do |f| 
-            = f.select :shippingcharges, ["選択してください","送料込み(出品者負担)", "着払い(購入者負担)"]
+          = f.select :shippingcharges, ["選択してください","送料込み(出品者負担)", "着払い(購入者負担)"]
       .product__carry__box3
         .product__carry__box3__ue
           .product__carry__box3__ue__erea
@@ -98,8 +92,7 @@
           .product__carry__box3__ue__hissu
             必須
         .product__carry__box3__select
-          = form_for @product do |f| 
-            = f.select :shipping_area, ["選択してください","北海道", "沖縄県"]
+          = f.select :shipping_area, ["選択してください","北海道", "沖縄県"]
       .product__carry__box4
         .product__carry__box4__ue
           .product__carry__box4__ue__day
@@ -107,8 +100,7 @@
           .product__carry__box4__ue__hissu
             必須
         .product__carry__box4__select
-          = form_for @product do |f| 
-            = f.select :days_to_ship, ["選択してください","1~2日で発送", "2~3日で発送", "4~7日で発送"]
+          = f.select :days_to_ship, ["選択してください","1~2日で発送", "2~3日で発送", "4~7日で発送"]
     %hr
     .product__price
       .product__price__box1
@@ -124,8 +116,7 @@
           .product__price__box2__right__en
             ¥
           .product__price__box2__right__0
-            = form_for @product do |f|
-              = f.number_field :price, min:300,max:9999999
+            = f.number_field :price, min:300,max:9999999
       .product__price__box3
         .product__price__box3__tesuuryou
           販売手数料（10%）
@@ -138,8 +129,7 @@
           —
     .product__sell
       .product__sell__box1
-        = form_for @product do |f|
-          = f.submit "出品する", class: "sell",id:"sell_botton"
+        = f.submit "出品する", class: "sell",id:"sell_botton"
       .product__sell__box3
         = link_to "もどる", root_path
     .product__rule
