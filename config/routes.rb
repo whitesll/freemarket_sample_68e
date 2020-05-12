@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   end
   
   root to: 'products#index'
-  resources :products, except: :index
+  resources :products, except: [:index] do
+    get :buy_confirmation, on: :collection
+  end
 end
