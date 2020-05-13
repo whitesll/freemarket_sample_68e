@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get '/users', to: 'devise/registrations#new'
   end
+  resources :users, only: :show
   
   root to: 'products#index'
   resources :products, except: :index
