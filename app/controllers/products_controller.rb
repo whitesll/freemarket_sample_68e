@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
       :price,
       images_attributes: [:image, :_destroy, :id]
     )
-    .merge(user_id: 1).merge(saler_id: 1).merge(buyer_id: 1)
+    .merge(user_id: 1,saler_id: 1,buyer_id: 1)
   end
   
   def set_product
