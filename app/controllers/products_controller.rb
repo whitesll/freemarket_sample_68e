@@ -48,5 +48,5 @@ def product_params
     :price,
     images_attributes: [:image, :_destroy, :id]
   )
-  .merge(user_id: current_user.id)
+  .merge(user_id: 1).merge(saler_id: 1).merge(buyer_id: 1)
 end
