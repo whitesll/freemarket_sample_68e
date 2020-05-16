@@ -109,7 +109,7 @@
             .product__carry__box3__ue__hissu
               必須
           .product__carry__box3__select
-            = f.select :shipping_area, ["選択してください","北海道", "沖縄県"]
+            = f.collection_select :shipping_area, Prefecture.all, :id, :name
         .product__carry__box4
           .product__carry__box4__ue
             .product__carry__box4__ue__day
