@@ -36,5 +36,17 @@ end
 private
 
 def product_params
-  params.require(:product).permit(:name,:text,:category_id,:price,:status,:shippingcharges,:shipping_area,:days_to_ship, images_attributes: [:image, :_destroy, :id]) .merge(user_id: 1).merge(saler_id: 1).merge(buyer_id: 1)
+  params.require(:product).permit(
+    :name, 
+    :category_id, 
+    :text, 
+    :brand, 
+    :status, 
+    :shippingcharges, 
+    :shipping_area, 
+    :days_to_ship, 
+    :price,
+    images_attributes: [:image, :_destroy, :id]
+  )
+  .merge(user_id: current_user.id)
 end
