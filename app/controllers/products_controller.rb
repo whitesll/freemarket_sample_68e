@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      render "products/new"
     end
   end
 
