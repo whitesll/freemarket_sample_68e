@@ -8,6 +8,14 @@ Rails.application.routes.draw do
     get '/users', to: 'devise/registrations#new'
   end
   resources :users, only: :show
+  resources :users do
+    member do
+      get 'exh', to: 'users#exh_show'
+      get 'buy', to: 'users#buy_show'
+      get 'credit', to: 'users#credit'
+      post 'credit', to: 'users#credit_post'
+    end
+  end
   
   root to: 'products#index'
   resources :products, except: [:index] do

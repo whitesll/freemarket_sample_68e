@@ -7,7 +7,7 @@
     .mypage--space
     .mypage
       .mypage_side
-        = link_to user_path(current_user[:id]), class: "mypage_side_box--current" do
+        = link_to user_path(current_user[:id]), class: "mypage_side_box" do
           .mypage_side_box--name
             マイページ
           .mypage_side_box--arrow
@@ -17,7 +17,7 @@
             出品する
           .mypage_side_box--arrow
             ▶︎
-        = link_to exh_user_path(current_user[:id]), class: "mypage_side_box" do
+        = link_to exh_user_path(current_user[:id]), class: "mypage_side_box--current" do
           .mypage_side_box--name
             出品した商品
           .mypage_side_box--arrow
