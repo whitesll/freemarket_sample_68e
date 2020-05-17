@@ -1,1 +1,6 @@
-A
+-if @card.exists?
+  = link_to 'クレジットカード詳細', new_creditcard_path
+-else
+  = link_to 'クレジットカード作成', new_creditcard_path
+%br
+= link_to "メインページに戻る",root_path
