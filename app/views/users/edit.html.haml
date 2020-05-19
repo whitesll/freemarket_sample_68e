@@ -46,6 +46,11 @@
             プロフィール確認・変更
           .mypage_side_box--arrow
             ▶︎
+        = link_to edit_address_user_path(current_user[:id]), class: "mypage_side_box" do
+          .mypage_side_box--name
+            発送元・お届け住所確認・変更
+          .mypage_side_box--arrow
+            ▶︎
         = link_to credit_user_path(current_user[:id]), class: "mypage_side_box" do
           .mypage_side_box--name
             支払い情報
@@ -71,7 +76,53 @@
             
 
         .mypage_main_center
-          = @address.zip_code
+          .form_top
+            会員情報入力
+          .user_info
+            = form_with model: @user do |f|
+              = render "devise/shared/error_messages", resource: @user
+              .form_box
+                ニックネーム
+                %span(class="required")
+                  必須
+                %br/
+                = f.text_field :nickname,placeholder: " 例) フリマ太郎", class: "form_box_large"
+              .form_box
+                = f.label :email
+                %span(class="required")
+                  必須
+                %br/
+                = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " PC・スマホどちらでも可", class: "form_box_large"
+              .form_box
+                お名前（全角）
+                %span(class="required")
+                  必須
+                .form_box_name
+                  %br/
+                  = f.text_field :full_width_last_name, placeholder: " 例)山田", class: "form_box_name_side"
+                  %br/
+                  = f.text_field :full_width_first_name, placeholder: " 例)太郎",class: "form_box_name_side"
+              .form_box
+                お名前ふりがな（全角)
+                %span(class="required")
+                  必須
+                .form_box_name
+                  %br/
+                  = f.text_field :hira_last_name, placeholder: " 例)やまだ", class: "form_box_name_side"
+                  %br/
+                  = f.text_field :hira_first_name, placeholder: " 例)たろう", class: "form_box_name_side"
+              .form_box
+                生年月日
+                %span(class="required")
+                  必須
+                %br/
+                != sprintf(f.date_select( :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), date_separator:'%s'),'年','月')+'日'
+              .form_text
+                本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+                %br/
+                他のお客様のに公開されることはありません。
+              .form_send
+                = f.submit "登録", class: "form_send_btn"
     .mypage--space
 
 
