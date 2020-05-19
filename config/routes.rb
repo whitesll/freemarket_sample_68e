@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       get 'buy', to: 'users#buy_show'
       get 'credit', to: 'users#credit'
       post 'credit', to: 'users#credit_post'
+      get 'edit_address', to: 'users#edit_address'
+      post 'edit_address', to: 'users#edit_address_post'
     end
   end
   

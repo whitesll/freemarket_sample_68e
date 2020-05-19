@@ -12,11 +12,19 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @address = current_user.address
+    @user = User.find(current_user[:id])
   end
 
   def update
+    
+  end
+
+  def edit_address
+    @user = current_user
+    @address = Address.
+  end
+
+  def edit_address_post
   end
 
   def credit
@@ -31,4 +39,9 @@ class UsersController < ApplicationController
     redirect_to root_path unless signed_in?
   end
 
+  protected
+
+  def address_params
+    params.require(:address).permit(:address_full_width_last_name, :address_full_width_first_name, :address_hira_last_name, :address_hira_first_name, :phone_number, :zip_code, :prefectures, :city, :address, :room_number)
+  end
 end
