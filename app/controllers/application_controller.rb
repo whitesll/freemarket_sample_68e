@@ -1,5 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+
+
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :full_width_last_name, :full_width_first_name, :hira_last_name, :hira_first_name, :birth_date])
+  end
+
 
   private
 

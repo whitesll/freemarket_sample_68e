@@ -1,0 +1,35 @@
+.background
+  .header2
+    .header2__logo
+      = image_tag "logo/logo.png", size: "214x62"
+  .user_info
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = render "layouts/notifications", resource: resource
+      .form_box
+        = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: " メールアドレス", class: "form_box_large"
+      .form_box
+        = f.password_field :password, autocomplete: "current-password",placeholder: " パスワード", class: "form_box_large"
+      - if devise_mapping.rememberable?
+        .form_box
+          = f.check_box :remember_me
+          = f.label :remember_me
+
+      .form_send
+        = f.submit "ログイン", class: "form_send_btn"
+      .sign_up_link
+        アカウントをお持ちでない方はこちら
+      .sign_up_link_btn
+        = link_to 'メールアドレスで新規登録', new_user_registration_path, class: "sign_up_link_btn_deco"
+
+  .footer2
+    %ul.terms
+      %li
+        = link_to "プライバシーポリシー", "/"
+      %li
+        = link_to "FURIMA利用規約", "/"
+      %li
+        = link_to "特定商取引に関する表記", "/"
+    .footer2__logo
+      = image_tag "logo/logo-white.png", size: "170x50"
+    .footer2__copyright
+      © FURIMA
