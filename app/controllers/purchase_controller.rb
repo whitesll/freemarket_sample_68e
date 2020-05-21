@@ -4,7 +4,7 @@ class PurchaseController < ApplicationController
 
   def index
     @product = Product.find(params[:purchase_id])
-    card = Creditcard.where(user_id: current_user.id).first
+    card = Creditcard.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -20,12 +20,12 @@ class PurchaseController < ApplicationController
 
   def pay
     @product = Product.find(params[:purchase_id])
-    card = Creditcard.where(user_id: current_user.id).first
+    card = Creditcard.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
     Payjp::Charge.create(
-    :amount => @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
+    amount: @product.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+    customer: card.customer_id, #顧客ID
+    currency: 'jpy', #日本円
   )
   redirect_to action: 'done', params: {purchase_id: params[:purchase_id]} #完了画面に移動
   end
@@ -33,6 +33,6 @@ class PurchaseController < ApplicationController
   def  done
     @product_purchaser= Product.find(params[:purchase_id])
     @product_purchaser.update( buyer_id: current_user.id)
-   end
+  end
 
 end
