@@ -16,12 +16,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    
+    @user.save
   end
 
   def edit_address
-    @user = current_user
-    @address = Address.
+    user = current_user
+    @address = user.address
+    # @address= Address.find_by(user_id: current_user.id)
   end
 
   def edit_address_post

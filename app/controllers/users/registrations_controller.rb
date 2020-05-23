@@ -35,7 +35,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
 
-
   protected
 
   def address_params

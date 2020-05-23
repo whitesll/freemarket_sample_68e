@@ -51,7 +51,7 @@
             発送元・お届け住所確認・変更
           .mypage_side_box--arrow
             ▶︎
-        = link_to credit_user_path(current_user[:id]), class: "mypage_side_box" do
+        = link_to user_creditcard_path(current_user[:id]), class: "mypage_side_box" do
           .mypage_side_box--name
             支払い情報
           .mypage_side_box--arrow
@@ -77,9 +77,9 @@
 
         .mypage_main_center
           .form_top
-            住所情報入力
+            発送元情報入力
           .user_info
-            = form_for @address do |f|
+            = form_with url: edit_address_user_path, model: @address, local: true do |f|
               = render "devise/shared/error_messages", resource: @address
               .form_box
                 お届け先氏名
@@ -120,8 +120,6 @@
                 = f.text_field :room_number, placeholder: " マンション名、建物名、部屋番号",class: "form_box_large"
               .form_send
                 = f.submit "登録", class: "form_send_btn"
-                = @address.zip_code
-
     .mypage--space
 
 

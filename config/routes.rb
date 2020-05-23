@@ -7,16 +7,15 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get '/users', to: 'devise/registrations#new'
   end
-  resources :users, only: :show
+  resources :users, only: [:show, :edit, :update]
   resources :users do
     member do
       get 'exh', to: 'users#exh_show'
       get 'buy', to: 'users#buy_show'
-      get 'credit', to: 'users#credit'
-      post 'credit', to: 'users#credit_post'
       get 'edit_address', to: 'users#edit_address'
-      post 'edit_address', to: 'users#edit_address_post'
+      patch 'edit_address', to: 'users#edit_address_post'
     end
+    resources :creditcards
   end
   
   root to: 'products#index'
