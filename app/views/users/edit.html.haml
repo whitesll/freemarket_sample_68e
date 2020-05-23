@@ -51,7 +51,7 @@
             発送元・お届け住所確認・変更
           .mypage_side_box--arrow
             ▶︎
-        = link_to credit_user_path(current_user[:id]), class: "mypage_side_box" do
+        = link_to user_creditcard_path(current_user[:id]), class: "mypage_side_box" do
           .mypage_side_box--name
             支払い情報
           .mypage_side_box--arrow
@@ -79,7 +79,7 @@
           .form_top
             会員情報入力
           .user_info
-            = form_with model: @user do |f|
+            = form_with model: @user, local: true do |f|
               = render "devise/shared/error_messages", resource: @user
               .form_box
                 ニックネーム
