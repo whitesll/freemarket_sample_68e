@@ -4,6 +4,7 @@
       = link_to image_tag "logo.png", size: "185x49"
   .body
     = form_for @product do |f|
+      = render 'layouts/error_messages', model: f.object
       .product__image
         .product__image__box1
           .product__image__box1__gazou
@@ -14,19 +15,16 @@
           最大10枚までアップロードできます
         .product__image__box3
           #input-box
-            #previews
-              - if @product.persisted?
-                - @product.images.each_with_index do |image, i|
-                  = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
             = f.fields_for :images do |image|
               .js-file_group{"data-index" => "#{image.index}"}             
                 = image.label :image do
                   %p ファイルを選択
                   = image_tag "icon/icon_camera.png", size: "30x30"
                 = image.file_field :image, class: 'js-file'
-                .js-remove 削除
-              - if @product.persisted?
-                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                - if @product.persisted?
+                  = image_tag image.object.image.url, data:{ index: image.index }, width: "100", height: '100'
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                  .js-remove 削除
             - if @product.persisted?
               .js-file_group{"data-index" => "#{@product.images.count}"}
                 = label_tag :image do
@@ -50,9 +48,6 @@
             必須
         .product__explanation__box2
           = f.text_area :text, placeholder: '商品の説明（必須、1000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのであわせやすいのでおすすめです。', rows: "5"
-        .product__explanation__box3
-          .product__explanation__box3__mojisuu
-            0/1000
       %hr
       .product__detail
         .product__detail__box1
@@ -64,7 +59,7 @@
             .product__detail__box2__ue__hissu
               必須
           .product__detail__box2__select
-            = f.collection_select :category_id, Category.all, :id, :name
+            = f.collection_select :category_id, Category.all, :id, :name,include_blank: "選択してください"
         .product__detail__box3
           .product__detail__box3__ue
             .product__detail__box3__ue__brand
@@ -80,7 +75,7 @@
             .product__detail__box4__ue__hissu
               必須
           .product__detail__box4__select
-            = f.select :status, [["選択してください"],["新品、未使用"],["未使用に近い"],["目立った傷や汚れなし"],["やや傷や汚れあり"],["傷や汚れあり"],["全体的に状態が悪い"]]
+            = f.select :status, [["新品、未使用"],["未使用に近い"],["目立った傷や汚れなし"],["やや傷や汚れあり"],["傷や汚れあり"],["全体的に状態が悪い"]],include_blank: "選択してください"
       %hr
       .product__carry
         .product__carry__box1
@@ -92,7 +87,7 @@
             .product__carry__box2__ue__hissu
               必須
           .product__carry__box2__select
-            = f.select :shippingcharges, [["選択してください"],["送料込み(出品者負担)"],["着払い(購入者負担)"]]
+            = f.select :shippingcharges, [["送料込み(出品者負担)"],["着払い(購入者負担)"]],include_blank: "選択してください"
         .product__carry__box3
           .product__carry__box3__ue
             .product__carry__box3__ue__erea
@@ -100,7 +95,7 @@
             .product__carry__box3__ue__hissu
               必須
           .product__carry__box3__select
-            = f.collection_select :shipping_area, Prefecture.all, :id, :name
+            = f.collection_select :shipping_area, Prefecture.all, :id, :name,include_blank: "選択してください"
         .product__carry__box4
           .product__carry__box4__ue
             .product__carry__box4__ue__day
@@ -108,7 +103,7 @@
             .product__carry__box4__ue__hissu
               必須
           .product__carry__box4__select
-            = f.select :days_to_ship, [["選択してください"],["1~2日で発送"],["2~3日で発送"],["4~7日で発送"]]
+            = f.select :days_to_ship, [["1~2日で発送"],["2~3日で発送"],["4~7日で発送"]],include_blank: "選択してください"
       %hr
       .product__price
         .product__price__box1

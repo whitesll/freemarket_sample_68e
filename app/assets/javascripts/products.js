@@ -9,15 +9,14 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][image]"
                     id="product_images_attributes_${num}_image"><br>
-                    <div class="js-remove">削除</div>
-                    
                   </div>`;
     return html;
   }
 
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">
+                  <div class="js-remove">削除</div>`;
     return html;
   }
   
@@ -42,10 +41,12 @@ $(document).on('turbolinks:load', ()=> {
     } else {  // 新規画像追加の処理
       $('.js-file_group:last').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#input-box').append(buildFileField(fileIndex[0]));
-      fileIndex.shift();
-      // 末尾の数に1足した数を追加する
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      if ($('.js-file').length < 10) {
+        $('#input-box').append(buildFileField(fileIndex[0]));
+        fileIndex.shift();
+        // 末尾の数に1足した数を追加する
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      }
     }
   });
 
@@ -60,6 +61,11 @@ $(document).on('turbolinks:load', ()=> {
     $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#input-box').append(buildFileField(fileIndex[0]));
+    if (($('.js-file').length == 0) || ($('.js-remove').length == 9)) {
+     $('#input-box').append(buildFileField(fileIndex[0]));
+     fileIndex.shift();
+     // 末尾の数に1足した数を追加する
+     fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+    }
   });
 });

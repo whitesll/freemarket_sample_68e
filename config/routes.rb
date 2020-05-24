@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   
   root to: 'products#index'
   resources :products, except: [:index] do
-    get :buy_confirmation, on: :collection
+    collection do
+      get :buy_confirmation
+      get '/', to: 'products#new'
+    end
   end
 end
