@@ -12,7 +12,7 @@ body {
   }
   .body {
   background-color: white;
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   margin: 0px auto;
   }
@@ -43,23 +43,40 @@ body {
   background-color: rgb(223, 223, 223);
   font-size: 12px;
   line-height: 1.4em;
-  text-align: center;
-  height: 500px;
+  height: 370px;
   width: 100%;
-  position: relative;
-  &__icon {
-    position: absolute;
-    top: 40px;
-    left: 195px;
-    .js-file_group{
-     
-      .js-remove{
-        width: 100px;
-        height: 100px;
-        background-color: green;
+    #input-box {
+      display: flex;
+      flex-wrap : wrap;
+      justify-content: center;
+      width: 720px;
+      .js-file_group{
+        margin: 5px;
+        height: 170px;
+        width: 120px;
+        border: 2px solid rgb(135, 135, 135);
+        text-align: center;
+        input{
+          display: none;
+        }
+        .js-remove{
+          border-radius: 2px;
+          background-color: rgb(181, 202, 181);
+          width: 50px;
+          margin: 0 auto;
+          cursor: pointer;
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+          border-bottom: solid 3px #b8c4bb;
+          &:active {
+            -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+            box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+            border-bottom: none;
+            cursor: pointer;
+          }
+        }
       }
     }
-  }
   }
   }
 
