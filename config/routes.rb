@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get '/users', to: 'devise/registrations#new'
   end
-  resources :users, only: [:show, :edit, :update]
-  resources :users do
+  resources :users, only: [:show, :edit, :update] do
     member do
       get 'exh', to: 'users#exh_show'
       get 'buy', to: 'users#buy_show'
@@ -28,3 +27,4 @@ Rails.application.routes.draw do
     end
   end
 end
+

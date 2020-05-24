@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :move_to_index, 
 
   def show
-    @user = current_user
   end
 
   def exh_show
@@ -20,18 +19,10 @@ class UsersController < ApplicationController
   end
 
   def edit_address
-    user = current_user
-    @address = user.address
-    # @address= Address.find_by(user_id: current_user.id)
+    @address = current_user.address
   end
 
   def edit_address_post
-  end
-
-  def credit
-  end
-
-  def credit_post
   end
 
   private
