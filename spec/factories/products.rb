@@ -22,5 +22,10 @@ FactoryBot.define do
         product.images << build_list(:image, 11, product: product)
       end
     end
+    factory :product_10images do
+      after(:build) do |product|
+        product.images << build_list(:image, 10, product: product)
+      end
+    end
   end
 end
