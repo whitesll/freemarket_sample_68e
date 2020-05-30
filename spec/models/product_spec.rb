@@ -3,11 +3,11 @@ require 'rails_helper'
 describe Product do
   describe "nil:false" do
     it "全ての項目が入力されていれば登録できること" do
-      product = build(:product)
+      product = build(:product_image)
       expect(product).to be_valid
     end
     it "画像がない場合保存できない" do
-      product = build(:product, images: "")
+      product = build(:product_image, image: " ")
       product.valid?
       expect(product.errors[:image]).to include("を入力してください")
     end
@@ -22,7 +22,7 @@ describe Product do
       expect(product.errors[:text]).to include("を入力してください")
     end
     it "カテゴリーがない場合保存できない" do
-      product = build(:product, category: "")
+      product = build(:product, category: " ")
       product.valid?
       expect(product.errors[:category]).to include("を入力してください")
     end
@@ -52,12 +52,24 @@ describe Product do
       expect(product.errors[:price]).to include("を入力してください")
     end
   end
+  describe "price" do
+    it "価格が数字でない場合保存できない(aaa)" do
+      product = build(:product, price: "aaa")
+      product.valid?
+      expect(product.errors[:price]).to include("は数値で入力してください")
+    end
+    it "価格が数字でない場合保存できない(あああ)" do
+      product = build(:product, price: "あああ")
+      product.valid?
+      expect(product.errors[:price]).to include("は数値で入力してください")
+    end
+  end
 
   describe "image" do
     it "画像が10枚あるとき保存できない" do
       product = build(:product_images)
       product.valid?
-      expect(product.errors[:image]).to include("を入力してください")
+      expect(product.errors[:image]).to include()
     end
   end
 end
