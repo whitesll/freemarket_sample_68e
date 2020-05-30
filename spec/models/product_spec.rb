@@ -7,7 +7,7 @@ describe Product do
       expect(product).to be_valid
     end
     it "画像がない場合保存できない" do
-      product = build(:product_image, image: " ")
+      product = build(:product_image, images: nil)
       product.valid?
       expect(product.errors[:image]).to include("を入力してください")
     end
@@ -22,7 +22,7 @@ describe Product do
       expect(product.errors[:text]).to include("を入力してください")
     end
     it "カテゴリーがない場合保存できない" do
-      product = build(:product, category: " ")
+      product = build(:product, category: nil)
       product.valid?
       expect(product.errors[:category]).to include("を入力してください")
     end
@@ -66,10 +66,15 @@ describe Product do
   end
 
   describe "image" do
-    it "画像が10枚あるとき保存できない" do
+    it "画像が11枚あるとき保存できない" do
       product = build(:product_images)
       product.valid?
       expect(product.errors[:image]).to include()
     end
+    it "画像が10枚まで保存できる" do
+      product = build(:product_10images)
+      expect(product).to be_valid
+    end
+
   end
 end
