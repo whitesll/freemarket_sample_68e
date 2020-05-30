@@ -17,13 +17,13 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
+      @product.images = []
       @product.images.new
       render :new
     end
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def edit
