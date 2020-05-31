@@ -58,7 +58,6 @@ $(document).on('turbolinks:load', ()=> {
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
     $(this).parent().remove();
-    $(`img[data-index="${targetIndex}"]`).remove();
 
     if ($('.js-remove').length == 9) {
      $('#input-box').append(buildFileField(fileIndex[0]));
