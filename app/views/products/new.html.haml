@@ -16,7 +16,7 @@
         .product__image__box3
           #input-box
             = f.fields_for :images do |image|
-              .js-file_group{"data-index" => "#{image.index}"}
+              .js-file_group{"data-index": "#{image.index}"}
                 = image.label :image do
                   %p ファイルを選択
                   = image_tag "icon/icon_camera.png", size: "30x30"
@@ -26,7 +26,7 @@
                   .js-remove 削除
                   = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             - if @product.persisted? && @product.images.count < 10
-              .js-file_group{"data-index" => "#{@product.images.count}"}
+              .js-file_group{"data-index": "#{@product.images.count}"}
                 = label_tag "product_images_attributes_#{@product.images.count}_image" do
                   %p ファイルを選択
                   = image_tag "icon/icon_camera.png", size: "30x30"
