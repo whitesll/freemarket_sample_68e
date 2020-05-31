@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<div data-index="${num}" class="js-file_group">
                     <label for="product_images_attributes_${num}_image">
                       <p>ファイルを選択</p>
-                      <img src="/assets/icon/icon_camera.png" width="30" height="30">
+                      <img src="/images/icon_camera.png" width="30" height="30">
                     </label>
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][image]"
