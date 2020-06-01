@@ -3,8 +3,8 @@
     .header__logo
       = link_to image_tag "logo.png", size: "185x49"
   .body
-    = form_for @product do |f|
-      = render 'layouts/error_messages', model: f.object
+    = form_for @product, remote: true do |f|
+      #product_error
       .product__image
         .product__image__box1
           .product__image__box1__gazou
@@ -24,7 +24,7 @@
                 - if @product.persisted?
                   = image_tag image.object.image.url, data:{ index: image.index }, width: "100", height: '100'
                   .js-remove 削除
-                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
             - if @product.persisted? && @product.images.count < 10
               .js-file_group{"data-index": "#{@product.images.count}"}
                 = label_tag "product_images_attributes_#{@product.images.count}_image" do
@@ -132,7 +132,7 @@
             —
       .product__sell
         .product__sell__box1
-          = f.submit "出品する", class: "sell",id:"sell_botton"
+          = f.submit @product.persisted? ? "編集する" : "出品する", class: "sell",id:"sell_botton"
         .product__sell__box3
           = link_to "もどる", root_path
       .product__rule

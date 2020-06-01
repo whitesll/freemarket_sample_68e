@@ -1,0 +1,4 @@
+//エラーメッセージ更新
+$("#product_error").html("#{escape_javascript(render("layouts/error_messages", model: @product))}");
+//一番上にスクロール
+$("html").animate({scrollTop: 0}, 300);
