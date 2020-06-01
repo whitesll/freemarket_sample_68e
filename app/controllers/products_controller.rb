@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
-
   before_action :set_product, except: [:index, :new, :create]
   skip_before_action :set_product, only: [:get_category_children, :get_category_grandchildren]
   
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   def index
     @products = Product.includes(:images).order('created_at DESC')
     @category_parent_array = Category.where(ancestry: nil)
@@ -35,9 +36,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      @product.images = []
-      @product.images.new
-      render :new
+      render "products/product_error"
     end
   end
 
@@ -46,13 +45,14 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    render :new
   end
 
   def update
     if @product.update(product_params)
       redirect_to root_path
     else
-      render :edit
+      render "products/product_error"
     end
   end
 
@@ -81,6 +81,12 @@ class ProductsController < ApplicationController
   
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def correct_user
+    if current_user.id != @product.user_id
+      redirect_to root_path
+    end
   end
 
 end
