@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
 
   before_action :set_product, except: [:index, :new, :create]
-
+  skip_before_action :set_product, only: [:get_category_children, :get_category_grandchildren]
+  
   def index
     @products = Product.includes(:images).order('created_at DESC')
     @category_parent_array = Category.where(ancestry: nil)

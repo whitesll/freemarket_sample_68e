@@ -9,10 +9,10 @@ $(document).on('turbolinks:load', function(){
     // 子カテゴリーの表示作成
     function appendChidrenBox(insertHTML){
       var childSelectHtml = '';
-      childSelectHtml = `<div class='exhibitionPage__main__contents__detail__category__choose__added' id= 'children_wrapper'>
-                          <div class='exhibitionPage__main__contents__detail__category__choose1'>
-                            <i class='fas fa-chevron-down exhibitionPage__main__contents__detail__category__choose--arrow-down'></i>
-                            <select class="exhibitionPage__main__contents__detail__category__choose--select" id="child_category" name="item[category_id]">
+      childSelectHtml = `<div class='product__detail__box2__select__added' id= 'children_wrapper'>
+                          <div class='product__detail__box2__select__added__1'>
+                            <i class='fas fa-chevron-down product__detail__box2__select--arrow-down'></i>
+                            <select class="product__detail__box2__select--select" id="child_category" name="item[category_id]">
                               <option value="---" data-category="---">---</option>
                               ${insertHTML}
                             <select>
@@ -24,10 +24,10 @@ $(document).on('turbolinks:load', function(){
     // 孫カテゴリーの表示作成
     function appendGrandchidrenBox(insertHTML){
       var grandchildSelectHtml = '';
-      grandchildSelectHtml = `<div class='exhibitionPage__main__contents__detail__category__choose__added' id= 'grandchildren_wrapper'>
-                                <div class='exhibitionPage__main__contents__detail__category__choose2'>
-                                  <i class='fas fa-chevron-down exhibitionPage__main__contents__detail__category__choose--arrow-down'></i>
-                                  <select class="exhibitionPage__main__contents__detail__category__choose__box--select" id="grandchild_category" name="item[category_id]">
+      grandchildSelectHtml = `<div class='product__detail__box2__select__added' id= 'grandchildren_wrapper'>
+                                <div class='product__detail__box2__select__added__2'>
+                                  <i class='fas fa-chevron-down product__detail__box2__select--arrow-down'></i>
+                                  <select class="product__detail__box2__select__box--select" id="grandchild_category" name="item[category_id]">
                                     <option value="---" data-category="---">---</option>
                                     ${insertHTML}
                                   </select>
