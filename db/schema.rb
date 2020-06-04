@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_044213) do
     t.text "text", null: false
     t.string "brand"
     t.integer "buyer_id"
-    t.string "status", null: false
+    t.integer "status", null: false
     t.string "shippingcharges", null: false
     t.string "shipping_area", null: false
     t.string "days_to_ship", null: false
