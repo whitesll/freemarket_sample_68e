@@ -114,6 +114,17 @@
         &_center {
           padding: 0 auto;
           width: 730px;
+          #charge-form {
+            #token_submit {
+              background-color: red;
+              width: 20%;
+              height: 50px;
+              font-size: 20px;
+              font-weight: bold;
+              color: white;
+              border-radius: 5px;
+            }
+          }
           .form_top {
             height: 70px;
             width: 700px;
@@ -130,6 +141,42 @@
             background-color: white;
             margin: 0 auto;
             padding: 30px 0;
+            text-align: center;
+            #charge-form {
+              padding-top: 30px;
+              .buy-btn {
+                background-color: red;
+                width: 20%;
+                height: 50px;
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+                border-radius: 5px;
+              }
+              #card_number{
+                width: 300px;
+              }
+              #token_submit{
+                @include standard_box();
+                text-align: center;
+                &_btn {
+                  border-radius: 5%;
+                  padding: 15px 49px;
+                  cursor: pointer;
+                  background-color: #48D1CC;
+                  color: white;
+                  transition: 0.5s;
+                  border: 2px solid #48D1CC;
+                }
+                &_btn:hover{
+                  color: #48D1CC;
+                  background: white;
+                }
+                .top {
+                  text-decoration: none;
+                }
+              }
+            }
             form {
               margin: 0 auto;
               #error_explanation {

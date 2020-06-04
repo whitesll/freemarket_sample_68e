@@ -13,7 +13,7 @@
     }
   }
   .main1 {
-    margin: 0 25%;
+    margin: 0 15%;
     &__title {
       background-color: white;
       font-size: 20px;
@@ -30,10 +30,12 @@
       &__group {
         display: flex;
         margin: auto;
-        width: 50%;
+        width: 90%;
         &__photo {
+          width: 70%;
         }
         &__box {
+          width: 30%;
           padding-left: 15px;
           &__name {
           }
@@ -113,7 +115,8 @@
     }
   }
   .footer {
-    width: 30%;
+    padding-top: 15px;
+    width: 50%;
     &__content {
       ul {
         font-size: 14px;

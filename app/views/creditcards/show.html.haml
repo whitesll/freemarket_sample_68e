@@ -88,11 +88,7 @@
             = exp_month + " / " + exp_year
             = form_tag(delete_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
               %input{ type: "hidden", name: "card_id", value: "" }
-              %button 削除する
+              = submit_tag '削除する',class: "buy-btn"
     .mypage--space
-
-
-
-
 = render "products/footer"
 = render "products/exhibition"
