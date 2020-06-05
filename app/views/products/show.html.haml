@@ -15,7 +15,7 @@
   .products-show__main
     .products-show__main__area
       .products-show__main__area__title
-        product3
+        = @product.name
       .products-show__main__area__image
         .products-show__main__area__image__big
           = image_tag "a007.png"
@@ -28,18 +28,19 @@
             = image_tag "a003.png"
       .products-show__main__area__price
         .products-show__main__area__price__display
-          ￥30000
+          ￥
+          = @product.price
         .products-show__main__area__price__tax
           (税込) 送料込み
       .products-show__main__area__explanation
-        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        = @product.text
       .products-show__main__area__information
         %table
           %tr
             %th
               出品者
             %td
-              hoge
+              = @product.user.nickname
           %tr
             %th
               カテゴリー
@@ -58,30 +59,29 @@
             %th
               ブランド
             %td
-          %tr
-            %th
-              商品のサイズ	
-            %td
+              = @product.brand
           %tr
             %th
               商品の状態
             %td
-              未使用に近い
+              = @product.status
           %tr
             %th
               配送料の負担	
             %td
-              送料込み（出品者負担）
+              = @product.shippingcharges
           %tr
             %th
               発送元の地域
             %td
+              -pref = Prefecture.find([@product.shipping_area])
+              
               = link_to "岩手県"
           %tr
             %th
               発送日の目安
             %td
-              4-7日で発送
+              = @product.days_to_ship
       .products-show__main__area__link
         .products-show__main__area__link__left
           = icon('fa', 'star')
