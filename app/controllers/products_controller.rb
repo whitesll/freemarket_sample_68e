@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :currect_user, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def correct_user
+  def currect_user
     if current_user.id != @product.user_id
       redirect_to root_path
     end
