@@ -5,6 +5,8 @@
         = @product.name
       .products-show__main__area__image
         .products-show__main__area__image__big
+          - @product.each do |product|
+            
           = @product.images[0]
           = image_tag "a007.png"
         .products-show__main__area__image__small
