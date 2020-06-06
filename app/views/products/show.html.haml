@@ -18,6 +18,7 @@
         = @product.name
       .products-show__main__area__image
         .products-show__main__area__image__big
+          = @product.images[0]
           = image_tag "a007.png"
         .products-show__main__area__image__small
           .products-show__main__area__image__small__left
@@ -74,9 +75,9 @@
             %th
               発送元の地域
             %td
-              -pref = Prefecture.find([@product.shipping_area])
-              
-              = link_to "岩手県"
+              - prefecture = Prefecture.find([@product.shipping_area])
+              = params[:prefecture]
+              = link_to ""
           %tr
             %th
               発送日の目安
