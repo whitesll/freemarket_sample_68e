@@ -90,52 +90,7 @@
       .new--post
         = link_to "新規投稿商品", "#"
       .main__category__box__products
-        %ul.lists
-          %li.list
-            = link_to "#" do
-              .image
-                = image_tag 'a007.png', alt: "顔写真4"
-              .menu  
-                .name
-                  products3
-                .detail
-                  .price
-                    30000円
-                    .icon
-                      %i.fa.fa-star
-                      0
-                %p
-                  (税込)
-          %li.list
-            = link_to "#" do
-              .image
-                = image_tag 'a003.png', alt: "顔写真5"
-              .menu  
-                .name
-                  products3
-                .detail
-                  .price
-                    20000円
-                    .icon
-                      %i.fa.fa-star
-                      0
-                %p
-                  (税込)
-          %li.list
-            = link_to "#" do
-              .image
-                = image_tag 'a001.png', alt: "顔写真6"
-              .menu  
-                .name
-                  products3
-                .detail
-                  .price
-                    10000円
-                    .icon
-                      %i.fa.fa-star
-                      0
-                %p
-                  (税込)
+        = render "product-list"
   .main__brand
     .main__brand__subtitle
       ピックアップブランド
