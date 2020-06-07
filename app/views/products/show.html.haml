@@ -72,8 +72,8 @@
             %th
               発送元の地域
             %td
-              = @product.shipping_area
-              = link_to ""
+              -pref = Prefecture.find @product.shipping_area
+              = link_to "#{pref.name.to_s}"
           %tr
             %th
               発送日の目安
