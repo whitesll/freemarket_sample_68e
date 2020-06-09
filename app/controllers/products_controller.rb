@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.images.new
     @categories = Category.all
-    @category_parent_array = ["---"]
     #データベースから、親カテゴリーのみ抽出し、配列化
     @category_parent_array = Category.where(ancestry: nil)
   end
@@ -44,7 +43,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @category = @product.category
-    @category2 = @category.parent
   end
 
   def edit
