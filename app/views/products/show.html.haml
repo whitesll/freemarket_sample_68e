@@ -1,3 +1,16 @@
+.products__category__header
+  .products__category__header__box
+    %ul
+      %li FURIMA
+      %li >
+      %li #{@category.root.name}
+      %li >
+      %li #{@category.parent.name}
+      %li >
+      %li #{@category.name}
+      %li >
+      %li.bold #{@product.name}
+      
 .products-show
   .products-show__main
     .products-show__main__area
