@@ -14,6 +14,10 @@
 .products-show
   .products-show__main
     .products-show__main__area
+      - unless user_signed_in?
+        .products-show__main__area__if-header
+          ※ユーザー登録後、商品が購入できます。
+
       .products-show__main__area__title
         = @product.name
       - len = @product.images.count
@@ -47,10 +51,8 @@
                 
                 %li
                   = link_to @category.root.name
-                
                 %li
                   = link_to @category.parent.name
-                  
                 %li
                   = link_to @category.name
           %tr
@@ -86,6 +88,22 @@
         .products-show__main__area__link__right
           = icon('fa', 'flag')
           = link_to "不適切な商品の情報"
+      .products-show__main__area__if-btn
+        - if user_signed_in?
+          - if current_user.id == @product.user_id
+            .products-show__main__area__if-btn__inner
+              = link_to "この商品の情報を編集する", "#" ,class: "if__btn-blue"
+            .products-show__main__area__if-btn__inner
+              = link_to "この商品を削除する", "#" ,class: "if__btn-red"
+          - else
+            .products-show__main__area__if-btn__inner
+              = link_to "この商品を購入する", "#", class: "if__btn-red"
+        - else
+          .products-show__main__area__if-btn__inner
+            ※ユーザー登録後、商品が購入できます。
+
+
+      
     .products-show__main__comment
       .products-show__main__comment__textarea
         %textarea
