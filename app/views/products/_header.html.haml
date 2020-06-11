@@ -2,7 +2,7 @@
   .header1__group
     .header1__group__box
       .header1__group__box__title
-        = link_to image_tag(src= "logo.png"), "#"
+        = link_to image_tag(src= "logo.png"), root_path
       .header1__group__box__search
         = form_with(local: true, method: :get, class: "search-form") do |form|
           = form.text_field :keyword, placeholder: "キーワードから探す", class: "search-input"
