@@ -1,0 +1,74 @@
+.lists {
+  width: 780px;
+  margin: 26px auto;
+  .list {
+    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    .box{
+      a {
+        background-color: #fff;
+        display: inline-block;
+        text-decoration: none;
+        position: relative;
+        .image {
+          width: 220px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          z-index: auto;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: auto;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+        .menu {
+          background-color: white;
+          color: #333;
+          padding: 16px;
+          .name {
+            overflow: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left;
+          }
+          .detail {
+            font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+            font-size: 16px;
+            .price {
+              font-size: 16px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .box{
+              }
+              span {
+                white-space: normal
+              }
+              .icon{
+                i {
+                  display: inline-block;
+                  font-size: inherit;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
+                }
+              } 
+            }
+          }
+          p {
+            font-size: 10px;
+            text-align: left;
+          } 
+        }
+      }
+    }
+  }
+}
