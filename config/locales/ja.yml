@@ -13,6 +13,8 @@ ja:
         shipping_area: "配送元の地域"
         days_to_ship: "配送までの日数"
         price: "販売価格"
+      images:
+        image: "画像"
 
 
     errors:
