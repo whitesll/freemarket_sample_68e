@@ -1,3 +1,4 @@
+= render "header"
 .products__category__header
   .products__category__header__box
     %ul
@@ -10,36 +11,38 @@
       %li #{@category.name}
       %li >
       %li.bold #{@product.name}
-      
 .products-show
   .products-show__main
     .products-show__main__area
+      - unless user_signed_in?
+        .products-show__main__area__if-header
+          ※ユーザー登録後、商品が購入できます。
+
       .products-show__main__area__title
-        product3
-      .products-show__main__area__image
-        .products-show__main__area__image__big
-          = image_tag "a007.png"
-        .products-show__main__area__image__small
-          .products-show__main__area__image__small__left
-            = image_tag "a007 (1).png"
-          .products-show__main__area__image__small__center
-            = image_tag "a001.png"
-          .products-show__main__area__image__small__right
-            = image_tag "a003.png"
+        = @product.name
+      - len = @product.images.count
+      - @product.images.each_with_index do |image,i|
+        - if i < 1
+          .products-show__main__area__big
+            = image_tag image.image.url
+        - else
+          .products-show__main__area__small
+            = image_tag image.image.url
       .products-show__main__area__price
         .products-show__main__area__price__display
-          ￥30000
+          ￥
+          = @product.price
         .products-show__main__area__price__tax
           (税込) 送料込み
       .products-show__main__area__explanation
-        親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        = @product.text
       .products-show__main__area__information
         %table
           %tr
             %th
               出品者
             %td
-              hoge
+              = @product.user.nickname
           %tr
             %th
               カテゴリー
@@ -48,40 +51,36 @@
                 
                 %li
                   = link_to @category.root.name
-                
                 %li
                   = link_to @category.parent.name
-                  
                 %li
                   = link_to @category.name
           %tr
             %th
               ブランド
             %td
-          %tr
-            %th
-              商品のサイズ	
-            %td
+              = @product.brand
           %tr
             %th
               商品の状態
             %td
-              未使用に近い
+              = @product.status
           %tr
             %th
               配送料の負担	
             %td
-              送料込み（出品者負担）
+              = @product.shippingcharges
           %tr
             %th
               発送元の地域
             %td
-              = link_to "岩手県"
+              -pref = Prefecture.find @product.shipping_area
+              = link_to "#{pref.name.to_s}"
           %tr
             %th
               発送日の目安
             %td
-              4-7日で発送
+              = @product.days_to_ship
       .products-show__main__area__link
         .products-show__main__area__link__left
           = icon('fa', 'star')
@@ -89,6 +88,22 @@
         .products-show__main__area__link__right
           = icon('fa', 'flag')
           = link_to "不適切な商品の情報"
+      .products-show__main__area__if-btn
+        - if user_signed_in?
+          - if current_user.id == @product.user_id
+            .products-show__main__area__if-btn__inner
+              = link_to "この商品の情報を編集する", "#" ,class: "if__btn-blue"
+            .products-show__main__area__if-btn__inner
+              = link_to "この商品を削除する", "#" ,class: "if__btn-red"
+          - else
+            .products-show__main__area__if-btn__inner
+              = link_to "この商品を購入する", "#", class: "if__btn-red"
+        - else
+          .products-show__main__area__if-btn__inner
+            ※ユーザー登録後、商品が購入できます。
+
+
+      
     .products-show__main__comment
       .products-show__main__comment__textarea
         %textarea
@@ -107,3 +122,5 @@
           = link_to "後ろの商品>"
       .products-show__main__link__more
         = link_to "ベビー・キッズをもっと見る"
+= render "footer"
+= render "exhibition"
