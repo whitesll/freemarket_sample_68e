@@ -59,7 +59,7 @@
             .product__detail__box2__ue__hissu
               必須
           .product__detail__box2__select
-            = f.collection_select :category_id, Category.all, :id, :name,include_blank: "選択してください"
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
         .product__detail__box3
           .product__detail__box3__ue
             .product__detail__box3__ue__brand
