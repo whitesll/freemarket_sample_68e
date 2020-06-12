@@ -1,0 +1,26 @@
+%ul.lists
+  %li.list
+    - @category.each do |product|
+      - product.images.first(1).each do |image|
+        .box
+          = link_to product_path(product) do
+            .image
+              = image_tag image.image.url
+            .menu  
+              .name
+                = product.name
+              .detail
+                .price
+                  .box
+                    = product.price
+                    円
+                  .icon
+                    %i.fa.fa-star
+                      0
+                %p
+                  (税込)
+              .buyer
+                - if product.buyer_id.blank?
+                  出品中
+                - else
+                  売却済 
