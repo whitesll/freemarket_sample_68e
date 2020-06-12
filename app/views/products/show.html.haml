@@ -92,9 +92,9 @@
         - if user_signed_in?
           - if current_user.id == @product.user_id
             .products-show__main__area__if-btn__inner
-              = link_to "この商品の情報を編集する", "#" ,class: "if__btn-blue"
+              = link_to "この商品の情報を編集する", edit_product_path(@product.id) ,class: "if__btn-blue"
             .products-show__main__area__if-btn__inner
-              = link_to "この商品を削除する", "#" ,class: "if__btn-red"
+              = link_to "この商品を削除する", product_path(@product.id), method: :delete, class: "if__btn-red"
           - else
             .products-show__main__area__if-btn__inner
               = link_to "この商品を購入する", "#", class: "if__btn-red"
