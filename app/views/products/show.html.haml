@@ -11,7 +11,6 @@
       %li #{@category.name}
       %li >
       %li.bold #{@product.name}
-= link_to '購入画面に進む', purchase_index_path(purchase_id: params[:id])
 .products-show
   .products-show__main
     .products-show__main__area
@@ -98,7 +97,7 @@
               = link_to "この商品を削除する", product_path(@product.id), method: :delete, class: "if__btn-red"
           - else
             .products-show__main__area__if-btn__inner
-              = link_to "この商品を購入する", "#", class: "if__btn-red"
+              = link_to "この商品を購入する", purchase_index_path(purchase_id: params[:id]), class: "if__btn-red"
         - else
           .products-show__main__area__if-btn__inner
             ※ユーザー登録後、商品が購入できます。

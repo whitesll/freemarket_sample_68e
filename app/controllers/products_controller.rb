@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_category, only: [:show, :edit]
   skip_before_action :set_product, only: [:get_category_children, :get_category_grandchildren]
   
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :currect_user, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
