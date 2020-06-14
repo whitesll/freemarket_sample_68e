@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
+  before_action :set_category, only: [:show, :edit]
   skip_before_action :set_product, only: [:get_category_children, :get_category_grandchildren]
   
   before_action :correct_user, only: [:edit, :update, :destroy]
@@ -41,7 +42,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @category = @product.category
   end
 
   def edit
@@ -81,6 +81,10 @@ class ProductsController < ApplicationController
   
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def set_category
+    @category = @product.category
   end
 
   def correct_user
