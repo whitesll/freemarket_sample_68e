@@ -11,6 +11,7 @@
       %li #{@category.name}
       %li >
       %li.bold #{@product.name}
+= link_to '購入画面に進む', purchase_index_path(purchase_id: params[:id])
 .products-show
   .products-show__main
     .products-show__main__area

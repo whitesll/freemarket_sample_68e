@@ -51,7 +51,7 @@
             発送元・お届け住所確認・変更
           .mypage_side_box--arrow
             ▶︎
-        = link_to  user_creditcard_path(current_user[:id]), class: "mypage_side_box--current" do
+        = link_to  "#", class: "mypage_side_box--current" do
           .mypage_side_box--name
             支払い情報
           .mypage_side_box--arrow
@@ -79,35 +79,16 @@
           .form_top
             クレジットカード情報
           .user_info
-            = form_with model: @user, local: true do |f|
-              .form_box
-                支払い番号
-                %span(class="required")
-                  必須
-                %br/
-                = f.text_field :custmer_id,placeholder: " 半角数字のみ", class: "form_box_large"
-              .form_box
-                有効期限
-                %span(class="required")
-                  必須
-                .form_box_name
-                  %br/
-                  = f.text_field :card_id, placeholder: " 例)04", class: "form_box_name_side"
-                  %br/
-                  = f.text_field :user_id, placeholder: " 例)22", class: "form_box_name_side"
-              .form_box
-                セキュリティコード
-                %span(class="required")
-                  必須
-                %br/
-                = f.text_field :custmer_id,placeholder: " カード背面4桁もしくは3桁", class: "form_box_large"
-                
-              .form_send
-                = f.submit "登録", class: "form_send_btn"
+            %label 登録クレジットカード情報
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+            = form_tag(delete_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              = submit_tag '削除する',class: "buy-btn"
     .mypage--space
-
-
-
-
 = render "products/footer"
 = render "products/exhibition"

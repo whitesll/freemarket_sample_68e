@@ -87,7 +87,7 @@ class ProductsController < ApplicationController
     @category = @product.category
   end
 
-  def correct_user
+  def currect_user
     if current_user.id != @product.user_id
       redirect_to root_path
     end
