@@ -8,6 +8,7 @@
   line-height: 50px;
   cursor: pointer;
   transition: 0.5s;
+  text-decoration: none;
   &--name {
     color: black;
     padding-left: 10px;
@@ -29,6 +30,7 @@
   line-height: 50px;
   cursor: pointer;
   transition: 0.5s;
+  text-decoration: none;
   &--name {
     color: black;
     padding-left: 10px;
@@ -74,7 +76,7 @@
         &_box:hover > .mypage_side_box--arrow {
           padding-right: 0;
         }
-        &_box--current {
+        .active {
           @include side_box--blue();
         }
       }
@@ -111,125 +113,133 @@
             }
           }
         }
-        &_center {
+        .main_display_mypage {
           padding: 0 auto;
           width: 730px;
-          .form_top {
-            height: 70px;
-            width: 700px;
-            background-color: white;
-            font-size: 24px;
-            text-align: center;
-            line-height: 70px;
-            font-weight: bold;
-            margin: 1px auto;
-        
-          }
-          .user_info{
-            width: 700px;
-            background-color: white;
-            margin: 0 auto;
-            padding: 30px 0;
-            form {
+          &_box {
+            display: none;
+            .form_top {
+              height: 70px;
+              width: 700px;
+              background-color: white;
+              font-size: 24px;
+              text-align: center;
+              line-height: 70px;
+              font-weight: bold;
+              margin: 1px auto;
+            }
+            .user_info{
+              width: 700px;
+              background-color: white;
               margin: 0 auto;
-              #error_explanation {
-                background-color: pink;
-              }
-              .form_box {
-                @include standard_box();
-                .field_with_errors {
-                  display: contents;
+              padding: 30px 0;
+              form {
+                margin: 0 auto;
+                #error_explanation {
+                  background-color: pink;
                 }
-                &_name {
+                .form_box {
                   @include standard_box();
-                  display: flex;
-                  justify-content: space-between;
-                  &_side {
-                    display: inline-block;
+                  .field_with_errors {
+                    display: contents;
+                  }
+                  &_name {
+                    @include standard_box();
+                    display: flex;
+                    justify-content: space-between;
+                    &_side {
+                      display: inline-block;
+                      width: 50%;
+                      padding: 10px 0;
+                    }
+                  }
+                  #user_birth_date_1i {
+                    margin-left: 3px;
+                  }
+                  #user_birth_date_2i {
+                    margin-left: 3px;
+                  }
+                  #user_birth_date_3i {
+                    margin-left: 3px;
+                  }
+                  select {
+                    height: 30px;
+                    width: 100px;
+                  } 
+                  &_large {
+                    width: 100%;
+                    padding: 10px 0;
+                  }
+                  &_small {
                     width: 50%;
                     padding: 10px 0;
                   }
+                  .required {
+                    background-color: red;
+                    border: 2px solid red;
+                    border-radius: 3px;
+                    color: white;
+                    font-size: 15px;
+                    
+                  }
                 }
-                #user_birth_date_1i {
-                  margin-left: 3px;
-                }
-                #user_birth_date_2i {
-                  margin-left: 3px;
-                }
-                #user_birth_date_3i {
-                  margin-left: 3px;
-                }
-                select {
-                  height: 30px;
-                  width: 100px;
-                } 
-                &_large {
-                  width: 100%;
-                  padding: 10px 0;
-                }
-                &_small {
-                  width: 50%;
-                  padding: 10px 0;
-                }
-                .required {
-                  background-color: red;
-                  border: 2px solid red;
-                  border-radius: 3px;
-                  color: white;
-                  font-size: 15px;
-                  
-                }
-              }
-        
-              .form_send{
-                @include standard_box();
-                text-align: center;
-                &_btn {
-                  border-radius: 5%;
-                  padding: 15px 49px;
-                  cursor: pointer;
-                  background-color: #48D1CC;
-                  color: white;
-                  transition: 0.5s;
-                  border: 2px solid #48D1CC;
-                }
-                &_btn:hover{
-                  color: #48D1CC;
-                  background: white;
-                }
-                .top {
-                  text-decoration: none;
-                }
-              }
-              .form_text {
-                @include standard_box();
-                font-size: 14px;
-              }
-              .sign_up_link {
-                @include standard_box();
-                text-align: center;
-                border-top: 1px solid #EEEEEE;
-                padding-top: 30px;
-                &_btn{
+          
+                .form_send{
+                  @include standard_box();
                   text-align: center;
-                  margin-bottom: 20px;
-                  &_deco {
+                  &_btn {
                     border-radius: 5%;
-                    padding: 16px 49px;
+                    padding: 15px 49px;
                     cursor: pointer;
                     background-color: #48D1CC;
                     color: white;
                     transition: 0.5s;
                     border: 2px solid #48D1CC;
-                    text-decoration: none;
                   }
-                  &_deco:hover{
+                  &_btn:hover{
                     color: #48D1CC;
                     background: white;
+                  }
+                  .top {
+                    text-decoration: none;
+                  }
+                }
+                .form_text {
+                  @include standard_box();
+                  font-size: 14px;
+                }
+                .sign_up_link {
+                  @include standard_box();
+                  text-align: center;
+                  border-top: 1px solid #EEEEEE;
+                  padding-top: 30px;
+                  &_btn{
+                    text-align: center;
+                    margin-bottom: 20px;
+                    &_deco {
+                      border-radius: 5%;
+                      padding: 16px 49px;
+                      cursor: pointer;
+                      background-color: #48D1CC;
+                      color: white;
+                      transition: 0.5s;
+                      border: 2px solid #48D1CC;
+                      text-decoration: none;
+                    }
+                    &_deco:hover{
+                      color: #48D1CC;
+                      background: white;
+                    }
                   }
                 }
               }
             }
+          }
+          &_box.show {
+            display: block;
+          }
+          &--category_box{
+            display: flex;
           }
         }
       }

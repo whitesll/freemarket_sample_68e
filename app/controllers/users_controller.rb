@@ -1,34 +1,21 @@
 class UsersController < ApplicationController
-  before_action :move_to_index, 
+  before_action :move_to_index, :set_product
 
   def show
-  end
-
-  def exh_show
-  end
-
-  def buy_show
-  end
-
-  def edit
+    @category = Product.order('created_at desc')
     @user = User.find(current_user[:id])
-  end
-
-  def update
-    @user.save
-  end
-
-  def edit_address
     @address = current_user.address
   end
 
-  def edit_address_post
-  end
 
   private
 
   def move_to_index
-    redirect_to root_path unless signed_in?
+    redirect_to root_path unless signed_in? current_user.id == params[:id]
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
   protected
