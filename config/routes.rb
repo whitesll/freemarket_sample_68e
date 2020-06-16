@@ -18,14 +18,12 @@ Rails.application.routes.draw do
     end
     resources :creditcards, only: [:new, :show] do
       collection do
-        get 'new', to: 'creditcards#new'
         post 'show', to: 'creditcards#show'
         post 'pay', to: 'creditcards#pay'
         post 'delete', to: 'creditcards#delete'
       end
     end
   end
-  
   root to: 'products#index'
   resources :products, except: [:index] do
     collection do
