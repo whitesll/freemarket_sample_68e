@@ -1,49 +1,38 @@
-
 .form_top
   会員情報入力
 .user_info
-  = form_with model: @user, local: true do |f|
-    = render "devise/shared/error_messages", resource: @user
-    .form_box
-      ニックネーム
-      %span(class="required")
-        必須
+  .form_box
+    ニックネーム
+    %br/
+    .form_box_large
+      = @user.nickname
+  .form_box
+    %br/
+    .form_box_large
+      = @user.email
+  .form_box
+    お名前（全角）
+    .form_box_name
       %br/
-      = f.text_field :nickname,placeholder: " 例) フリマ太郎", class: "form_box_large"
-    .form_box
-      = f.label :email
-      %span(class="required")
-        必須
+      .form_box_name_side
+        = @user.full_width_last_name
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: " PC・スマホどちらでも可", class: "form_box_large"
-    .form_box
-      お名前（全角）
-      %span(class="required")
-        必須
-      .form_box_name
-        %br/
-        = f.text_field :full_width_last_name, placeholder: " 例)山田", class: "form_box_name_side"
-        %br/
-        = f.text_field :full_width_first_name, placeholder: " 例)太郎",class: "form_box_name_side"
-    .form_box
-      お名前ふりがな（全角)
-      %span(class="required")
-        必須
-      .form_box_name
-        %br/
-        = f.text_field :hira_last_name, placeholder: " 例)やまだ", class: "form_box_name_side"
-        %br/
-        = f.text_field :hira_first_name, placeholder: " 例)たろう", class: "form_box_name_side"
-    .form_box
-      生年月日
-      %span(class="required")
-        必須
+      .form_box_name_side
+        = @user.full_width_first_name
+  .form_box
+    お名前ふりがな（全角)
+    .form_box_name
       %br/
-      != sprintf(f.date_select( :birth_date, use_month_numbers: true, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), date_separator:'%s'),'年','月')+'日'
-    .form_text
-      本人確認 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。
+      .form_box_name_side
+        = @user.hira_last_name
       %br/
-      他のお客様のに公開されることはありません。
-    .form_send
-      = f.submit "登録", class: "form_send_btn"
+      .form_box_name_side
+        = @user.hira_first_name
+  .form_box
+    生年月日
+    %br/
+    = @user.birth_date
+  .form_text
+  .form_send
+    = link_to "情報編集画面に移る", class: "form_send_btn"
 .mypage--space

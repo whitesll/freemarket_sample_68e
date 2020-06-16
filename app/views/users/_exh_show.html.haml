@@ -1,5 +1,5 @@
 .mypage_products_lists
-  - @category.each do |product|
+  - @product.each do |product|
     - product.images.each do |image|
       .box
         = link_to product_path(product) do
