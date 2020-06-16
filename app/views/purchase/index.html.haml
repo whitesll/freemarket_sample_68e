@@ -1,0 +1,74 @@
+.confirmation
+  .head--logo
+    = link_to "#" do
+      = image_tag "logo.png"
+  .main1
+    .main1__title
+      購入内容の確認
+    .main1__info
+      .main1__info__group
+        .main1__info__group__photo
+          - @product.images.each do |image|
+            = image_tag image.image.url
+        .main1__info__group__box
+          .main1__info__group__box__name
+            %span 商品名:
+            = @product.name
+          .main1__info__group__box__price
+            %span 価格:
+            = @product.price
+            %span 円
+            %br
+            %span 送料込み(税込)
+    .main1__content
+      .main1__content__item
+        .main1__content__item__money
+          .box
+            .text
+              支払い金額
+            .total
+              = @product.price
+              %span 円
+        .main1__content__item__method
+          .subtitle
+            支払い方法
+          .registration
+            = "**** **** **** " + @default_card_information.last4
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+        .main1__content__item__carry
+          .subtitle
+            配送先
+          .registration
+            %span 郵便番号:
+            = @address.zip_code
+          .registration
+            %span 都道府県:
+            = @address.prefectures
+          .registration
+            %span 市区町村:
+            = @address.city
+          .registration
+            %span 番地:
+            = @address.address
+          .registration
+            %span マンション名、ビル名、部屋番号:
+            = @address.room_number
+        .main1__content__item__buy
+          = form_tag(action: :pay, method: :post) do
+            = hidden_field_tag :purchase_id, @product.id
+            = submit_tag '購入する',class: "buy-btn"
+  .footer
+    .footer__content
+      %ul
+        %li
+          = link_to "プライバシーボリシー", "#"
+        %li
+          = link_to "FURIMA利用規約", "#"
+        %li
+          = link_to "特定商取引に関する記表", "#"
+    .footer__logo
+      = link_to "#" do
+        = image_tag "logo.png"
+      %p © FURIMA

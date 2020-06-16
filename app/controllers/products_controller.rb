@@ -1,12 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
+  before_action :set_category, only: [:show, :edit]
   skip_before_action :set_product, only: [:get_category_children, :get_category_grandchildren]
   
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :currect_user, only: [:edit, :update, :destroy]
 
   def index
     @products = Product.includes(:images).order('created_at DESC')
-    @category = Product.order('created_at desc').limit(3)
+    @category = Product.order('created_at desc')
   end
 
   def new
@@ -41,7 +42,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @category = @product.category
   end
 
   def edit
@@ -83,7 +83,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def correct_user
+  def set_category
+    @category = @product.category
+  end
+
+  def currect_user
     if current_user.id != @product.user_id
       redirect_to root_path
     end

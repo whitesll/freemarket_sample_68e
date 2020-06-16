@@ -3,24 +3,41 @@
     - @category.each do |product|
       - product.images.first(1).each do |image|
         .box
-          = link_to product_path(product) do
-            .image
-              = image_tag image.image.url
-            .menu  
-              .name
-                = product.name
-              .detail
-                .price
-                  .box
-                    = product.price
-                    円
-                  .icon
-                    %i.fa.fa-star
-                      0
-                %p
-                  (税込)
-              .buyer
-                - if product.buyer_id.blank?
+          - if product.buyer_id.blank?
+            = link_to product_path(product) do
+              .image
+                = image_tag image.image.url
+              .menu  
+                .name
+                  = product.name
+                .detail
+                  .price
+                    .box
+                      = product.price
+                      円
+                    .icon
+                      %i.fa.fa-star
+                        0
+                  %p
+                    (税込)
+                .buyer
                   出品中
-                - else
+          - else
+            = link_to "" do
+              .image
+                = image_tag image.image.url
+              .menu  
+                .name
+                  = product.name
+                .detail
+                  .price
+                    .box
+                      = product.price
+                      円
+                    .icon
+                      %i.fa.fa-star
+                        0
+                  %p
+                    (税込)
+                .buyer
                   売却済 

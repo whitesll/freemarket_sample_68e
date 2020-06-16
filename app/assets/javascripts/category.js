@@ -38,8 +38,7 @@ $(document).on('turbolinks:load', function(){
 
     // 親カテゴリー選択後のイベント
     $('#parent_category').on('change', function(){
-      var parent_category_id = document.getElementById
-      ('parent_category').value; //選択された親カテゴリーの名前を取得
+      var parent_category_id = $('#parent_category').val(); //選択された親カテゴリーの名前を取得
       if (parent_category_id != "---"){ //親カテゴリーが初期値でないことを確認
         $.ajax({
           url: '/products/category/get_category_children',
@@ -67,7 +66,7 @@ $(document).on('turbolinks:load', function(){
 
     // 子カテゴリー選択後のイベント
     $('.product__detail__box2__select').on('change', '#child_category', function(){
-      var child_category_id = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
+      var child_category_id = $('#child_category option:selected').val(); //選択された子カテゴリーのidを取得
       if (child_category_id != "---"){ //子カテゴリーが初期値でないことを確認
         $.ajax({
           url: '/products/category/get_category_grandchildren',

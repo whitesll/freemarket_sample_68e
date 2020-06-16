@@ -114,6 +114,44 @@
         &_center {
           padding: 0 auto;
           width: 730px;
+          #card_number{
+            margin-top: 15px;
+            width: 150px;
+            height: 20px;
+            margin: 0 auto;
+          }
+          #exp_month{
+            margin-top: 15px;
+            height: 30px;
+          }
+          #exp_year{
+            margin-top: 15px;
+            height: 30px;
+          }
+          #cvc{
+            margin-top: 15px;
+            width: 200px;
+          }
+          #charge-form {
+            text-align: center;
+            padding: 30px 0px;
+            #token_submit {
+              margin-top: 15px;
+              font-size: 20px;
+              border-radius: 5%;
+              padding: 10px 20px;
+              cursor: pointer;
+              background-color: #48D1CC;
+              color: white;
+              transition: 0.5s;
+              border: 2px solid #48D1CC;
+              text-decoration: none;
+              &_token_submit:hover{
+                color: #48D1CC;
+                background: white;
+              }
+            }
+          }
           .form_top {
             height: 70px;
             width: 700px;
@@ -130,6 +168,42 @@
             background-color: white;
             margin: 0 auto;
             padding: 30px 0;
+            text-align: center;
+            #charge-form {
+              padding-top: 30px;
+              .buy-btn {
+                background-color: red;
+                width: 20%;
+                height: 50px;
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+                border-radius: 5px;
+              }
+              #card_number{
+                width: 300px;
+              }
+              #token_submit{
+                @include standard_box();
+                text-align: center;
+                &_btn {
+                  border-radius: 5%;
+                  padding: 15px 49px;
+                  cursor: pointer;
+                  background-color: #48D1CC;
+                  color: white;
+                  transition: 0.5s;
+                  border: 2px solid #48D1CC;
+                }
+                &_btn:hover{
+                  color: #48D1CC;
+                  background: white;
+                }
+                .top {
+                  text-decoration: none;
+                }
+              }
+            }
             form {
               margin: 0 auto;
               #error_explanation {
