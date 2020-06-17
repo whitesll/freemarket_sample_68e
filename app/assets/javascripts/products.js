@@ -43,9 +43,9 @@ $(document).on('turbolinks:load', ()=> {
       
       if ($('.js-file').length < 10){
         $('#input-box').append(buildFileField(fileIndex[0]));
-        fileIndex.shift();
         // 末尾の数に1足した数を追加する
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+        fileIndex.shift();
       }
     }
   });
@@ -61,9 +61,9 @@ $(document).on('turbolinks:load', ()=> {
 
     if ($('.js-remove').length == 9) {
      $('#input-box').append(buildFileField(fileIndex[0]));
-     fileIndex.shift();
      // 末尾の数に1足した数を追加する
      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+     fileIndex.shift();
     }
   });
 });
