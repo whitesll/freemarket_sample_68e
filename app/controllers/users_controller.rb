@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :move_to_index, 
+  before_action :move_to_index, :set_user, :set_category, :set_product
 
   def show
   end
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def buy_show
+    @product = current_user.products.order('created_at desc')
   end
 
   def edit
@@ -28,12 +29,18 @@ class UsersController < ApplicationController
   private
 
   def move_to_index
-    redirect_to root_path unless signed_in?
+    redirect_to root_path unless signed_in? current_user.id == params[:id]
   end
 
-  protected
+  def set_user
+    @user = User.find(current_user[:id])
+  end
 
-  def address_params
-    params.require(:address).permit(:address_full_width_last_name, :address_full_width_first_name, :address_hira_last_name, :address_hira_first_name, :phone_number, :zip_code, :prefectures, :city, :address, :room_number)
+  def set_category
+    @category = Product.order('created_at desc')
+  end
+
+  def set_product
+    @product = current_user.products.order('created_at desc')
   end
 end
