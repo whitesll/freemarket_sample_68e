@@ -1,4 +1,4 @@
-= link_to new_product_path do
+= link_to user_signed_in? ? new_product_path : new_user_session_path do
   .footer__exhibition
     %span.text 出品する 
-    = image_tag "icon_camera.png" 
+    = image_tag "icon_camera.png"
