@@ -1,43 +1,42 @@
 %ul.lists
   %li.list
     - @category.each do |product|
-      - product.images.first(1).each do |image|
-        .box
-          - if product.buyer_id.blank?
-            = link_to product_path(product) do
-              .image
-                = image_tag image.image.url
-              .menu  
-                .name
-                  = product.name
-                .detail
-                  .price
-                    .box
-                      = product.price
-                      円
-                    .icon
-                      %i.fa.fa-star
-                        0
-                  %p
-                    (税込)
-                .buyer
-                  出品中
-          - else
-            = link_to "" do
-              .image
-                = image_tag image.image.url
-              .menu  
-                .name
-                  = product.name
-                .detail
-                  .price
-                    .box
-                      = product.price
-                      円
-                    .icon
-                      %i.fa.fa-star
-                        0
-                  %p
-                    (税込)
-                .buyer
-                  売却済 
+      .box
+        - if product.buyer_id.blank?
+          = link_to product_path(product) do
+            .image
+              = image_tag product.images.first.image.url
+            .menu  
+              .name
+                = product.name
+              .detail
+                .price
+                  .box
+                    = product.price
+                    円
+                  .icon
+                    %i.fa.fa-star
+                      0
+                %p
+                  (税込)
+              .buyer
+                出品中
+        - else
+          = link_to "" do
+            .image
+              = image_tag product.images.first.image.url
+            .menu  
+              .name
+                = product.name
+              .detail
+                .price
+                  .box
+                    = product.price
+                    円
+                  .icon
+                    %i.fa.fa-star
+                      0
+                %p
+                  (税込)
+              .buyer
+                売却済 
