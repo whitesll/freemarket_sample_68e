@@ -12,7 +12,7 @@
             マイページ
           .mypage_side_box--arrow
             ▶︎
-        = link_to "#", class: "mypage_side_box" do
+        = link_to new_product_path, class: "mypage_side_box" do
           .mypage_side_box--name
             出品する
           .mypage_side_box--arrow
@@ -70,12 +70,37 @@
                 = current_user.nickname
               .my_items_under
                 .my_items_under--exh
-                  出品中 
+                  %p 出品中:
                 .my_items_under--valuation
-                  出品数 
+                  %P 出品数: #{current_user.products.length}
             
 
         .mypage_main_center
+          - if @product.present?
+            .mypage_products_lists
+              - @product.each do |product|
+                .box
+                  = link_to product_path(product) do
+                    .image
+                      = image_tag product.images.first.image.url
+                    .menu  
+                      .name
+                        = product.name
+                      .detail
+                        .price
+                          = product.price
+                          円
+                          %i.fa.fa-star
+                            0
+                        %p
+                          (税込)
+                      .buyer
+                        - if product.buyer_id.blank?
+                          出品中
+                        - else
+                          売却済 
+          - else
+            登録した商品はありません。
     .mypage--space
 
 
